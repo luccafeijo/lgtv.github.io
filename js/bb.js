@@ -1,5 +1,4 @@
 const inicio = new Date('2023-04-12 00:00:00');
-
 const hoje = new Date();
 
 $('#box-mes-dia').html(MostraMesDias(inicio, hoje));
@@ -7,7 +6,6 @@ $('#box-semanas').html(MostraSemanasDias(inicio, hoje));
 
 function MostraMesDias(inicio, hoje) {
     var exibir = "";
-    // const totaldias = Math.ceil(Math.abs(hoje - inicio) / (1000 * 60 * 60 * 24));
 
     //diferença de dias entre o dia 1 e o dia atual
     var diff = inicio.getDate() -1;
@@ -15,16 +13,14 @@ function MostraMesDias(inicio, hoje) {
     //removendo a diferença, a data vai ficar como dia 1
     inicio.setDate(inicio.getDate() - diff);
     var mesinicio = Math.abs(inicio.getMonth()+1); //+1 apenas para deixar a numeracao correta, ja que "janeiro" começa com o valor "0"
-    // logData(inicio);
 
     //removendo a diferença que possuia do inicio, hoje pode acabar mudando de mês, e com isso, verificar se é diferente do mês de inicio
     hoje.setDate(hoje.getDate() - diff);
     var meshoje = Math.abs(hoje.getMonth()+1); //+1 apenas para deixar a numeracao correta, ja que "janeiro" começa com o valor "0"
-    // logData(hoje);
 
     exibir = meshoje - mesinicio;
      
-    return "<p>"+exibir+" meses</p>";
+    return "<p>"+exibir+" meses e "+ Math.abs(hoje.getDate()-1) +" dias</p>";
 }
 
 function MostraSemanasDias(inicio, hoje) {
@@ -48,23 +44,6 @@ function MostraSemanasDias(inicio, hoje) {
     }
      
     return "<p>"+exibir+"</p>";
-}
-
-function BuscaDiaUm(data) {
-    console.log(data.getDate());
-
-    const mesData = data.getMonth();
-    var dataCalc = data;
-
-    do {
-        dataCalc.setDate(dataCalc.getDate() - 1);
-    }
-    while (dataCalc.getDate() != 1);
-
-    return dataCalc;
-    // for (var i = 0; i < mesData; i++) {
-    //     dataCalc.setDate(dataCalc.getDate() - 1);
-    // }
 }
 
 function logData(data) {
