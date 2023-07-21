@@ -1,6 +1,38 @@
 @font-face { font-family: Dudu_Calligraphy; src: url('../sources/fonts/Dudu_Calligraphy.ttf'); } 
 
+@media only screen and (min-width: 768px) {
+    /* For desktop: */
+        body {
+            background-image: url("../sources/images/life-web-new.png");
+            background-size: 1400px;
+            background-position: top;
+            background-repeat: no-repeat;
+            background-color: #fff;
+        }
+    
+        body h1 {
+            margin-top: 90px;
+            text-align: center;
+            transform: rotate(359deg);
+        }
+    
+        body h1 b{
+            color: darkorchid;
+        }
+    
+        body p {
+            font-family: Dudu_Calligraphy;
+            transform: rotate(359deg);
+            text-align: center;
+            font-size: 30px;
+            padding: 0px;
+            margin: 0px 0px 15px 0px;
+        }
 
+        body #curiosidade {
+            margin-top: 110px;
+        }
+    }
 
 /* For mobile phones/tablets: */
 @media only screen and (max-width: 767px) {
@@ -30,34 +62,8 @@
         padding: 0px;
         margin: 0px 0px 2px 0px;
     }
-}
 
-@media only screen and (min-width: 768px) {
-/* For desktop: */
-    body {
-        background-image: url("../sources/images/life-web.png");
-        background-size: 1400px;
-        background-position: top;
-        background-repeat: no-repeat;
-        background-color: #fff;
-    }
-
-    body h1 {
-        margin-top: 90px;
-        text-align: center;
-        transform: rotate(359deg);
-    }
-
-    body h1 b{
-        color: darkorchid;
-    }
-
-    body p {
-        font-family: Dudu_Calligraphy;
-        transform: rotate(359deg);
-        text-align: center;
-        font-size: 30px;
-        padding: 0px;
-        margin: 0px 0px 15px 0px;
+    body #curiosidade {
+        margin-top: 78px;
     }
 }
