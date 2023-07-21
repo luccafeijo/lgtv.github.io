@@ -3,6 +3,7 @@ const hoje = new Date();
 
 $('#box-mes-dia').html(MostraMesDias(inicio, hoje));
 $('#box-semanas').html(MostraSemanasDias(inicio, hoje));
+$('#curiosidade').html(Curiosidade(inicio, hoje));
 
 function MostraMesDias(inicio, hoje) {
     var exibir = "";
@@ -44,6 +45,11 @@ function MostraSemanasDias(inicio, hoje) {
     }
      
     return "<p>"+exibir+"</p>";
+}
+
+function Curiosidade(inicio, hoje) {
+    const totaldias = Math.ceil(Math.abs(hoje - inicio) / (1000 * 60 * 60 * 24));
+    return "<p>"+totaldias+"</p>";
 }
 
 function logData(data) {
