@@ -50,132 +50,63 @@ function Curiosidade(inicio, hoje) {
 
     //base tamanho
     //https://blog-pt.kinedu.com/tamanho-do-bebe/
-    switch (semanas) {
-        //primeiro trimestre
-        case 1:
+
+    let semanaTamanho = [
+        null, //0
+        null, //1 - começo primeiro trimestre
+        null, //2
+        null, //3
+        "1 mm", //4
+        "3 mm", //5
+        "4 mm", //6
+        "8 mm", //7
+        "11 mm", //8
+        "2,5 cm", //9
+        "3 cm", //10
+        "4 cm", //11
+        "5 cm", //12
+        "7 cm", //13
+        "8 cm", //14 - começo segundo trimestre
+        "10 cm", //15
+        "11 cm", //16
+        "13 cm", //17
+        "14 cm", //18
+        "15 cm", //19
+        "20 cm", //20
+        "26 cm", //21
+        "27 cm", //22
+        "29 cm", //23
+        "30 cm", //24
+        "34 cm", //25
+        "35 cm", //26
+        "36 cm", //27 - começo terceiro trimestre
+        "37 cm", //28
+        "38 cm", //29
+        "39 cm", //30
+        "41 cm", //31
+        "42 cm", //32
+        "43 cm", //33
+        "45 cm", //34
+        "46 cm", //35
+        "47 cm", //36
+        "48 cm", //37
+        "49 cm", //38
+        "50 cm", //39
+        "51 cm", //40
+    ];
+
+    if (semanas >= 1 <= 40) {
+        if (semanas == 1) {
             return "<p>Você já descobriu a gravidez? sério?</p>";
-            break;
-        case 2:
+        } else if (semanas == 2) {
             return "<p>Ainda é muito pequeno para informar um tamanho</p>";
-            break;
-        case 3:
+        } else if (semanas == 3) {
             return "<p>Se tiver 1 mm de tamanho é muuuuito</p>";
-            break;
-        case 4:
-            return "<p>aproximadamente 2 mm</p>";
-            break;
-        case 5:
-            return "<p>aproximadamente 3 mm</p>";
-            break;
-        case 6:
-            return "<p>aproximadamente 4 mm</p>";
-            break;
-        case 7:
-            return "<p>aproximadamente 8 mm</p>";
-            break;
-        case 8:
-            return "<p>aproximadamente 11 mm</p>";
-            break;
-        case 9:
-            return "<p>aproximadamente 2,5 cm</p>";
-            break;
-        case 10:
-            return "<p>aproximadamente 3 cm</p>";
-            break;
-        case 11:
-            return "<p>aproximadamente 4 cm</p>";
-            break;
-        case 12:
-            return "<p>aproximadamente 5 cm</p>";
-            break;
-        case 13:
-            return "<p>aproximadamente 7 cm</p>";
-            break;
-        //segundo trimestre
-        case 14:
-            return "<p>aproximadamente 8 cm</p>";
-            break;
-        case 15:
-            return "<p>aproximadamente 10 cm</p>";
-            break;
-        case 16:
-            return "<p>aproximadamente 11 cm</p>";
-            break;
-        case 17:
-            return "<p>aproximadamente 13 cm</p>";
-            break;
-        case 18:
-            return "<p>aproximadamente 14 cm</p>";
-            break;
-        case 19:
-            return "<p>aproximadamente 15 cm</p>";
-            break;
-        case 20:
-            return "<p>aproximadamente 20 cm</p>";
-            break;
-        case 21:
-            return "<p>aproximadamente 26 cm</p>";
-            break;
-        case 22:
-            return "<p>aproximadamente 27 cm</p>";
-            break;
-        case 23:
-            return "<p>aproximadamente 29 cm</p>";
-            break;
-        case 24:
-            return "<p>aproximadamente 30 cm</p>";
-            break;
-        case 25:
-            return "<p>aproximadamente 34 cm</p>";
-            break;
-        case 26:
-            return "<p>aproximadamente 35 cm</p>";
-            break;
-        //Terceiro trimestre
-        case 27:
-            return "<p>aproximadamente 36 cm</p>";
-            break;
-        case 28:
-            return "<p>aproximadamente 37 cm</p>";
-            break;
-        case 29:
-            return "<p>aproximadamente 38 cm</p>";
-            break;
-        case 30:
-            return "<p>aproximadamente 39 cm</p>";
-            break;
-        case 31:
-            return "<p>aproximadamente 41 cm</p>";
-            break;
-        case 32:
-            return "<p>aproximadamente 42 cm</p>";
-            break;
-        case 33:
-            return "<p>aproximadamente 43 cm</p>";
-            break;
-        case 34:
-            return "<p>aproximadamente 45 cm</p>";
-            break;
-        case 35:
-            return "<p>aproximadamente 46 cm</p>";
-            break;
-        case 36:
-            return "<p>aproximadamente 47 cm</p>";
-            break;
-        case 37:
-            return "<p>aproximadamente 48 cm</p>";
-            break;
-        case 38:
-            return "<p>aproximadamente 49 cm</p>";
-            break;
-        case 39:
-            return "<p>aproximadamente 50 cm</p>";
-            break;
-        case 40:
-            return "<p>aproximadamente 51 cm</p>";
-            break;
-        default:
-            return "<p>Vix, sei não</p>";
+        } else {
+            return "<p>aproximadamente "+ semanaTamanho[semanas] +"</p>";
+        }
+    } else {
+        return "<p>Vix, sei não</p>";
     }
 }
 
