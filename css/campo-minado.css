@@ -75,31 +75,70 @@
 .game-options .option-btn:hover {
     background-size: cover;
     background-position: center;
+    -webkit-text-stroke: 1px;
+    -webkit-text-stroke-color: #444444;
 }
+
 .game-options .option-btn.easy:hover {
     background-image: url("https://i.pinimg.com/originals/07/d0/1b/07d01b67455c637cfe6e4c6fc5aa099d.gif");
     color: greenyellow;
-    -webkit-text-stroke: 1px;
-    -webkit-text-stroke-color: #444444;
 }
 
 .game-options .option-btn.medium:hover {
     background-image: url("https://i.pinimg.com/originals/91/95/f4/9195f4dd1b69f90038f627c8af422429.gif");
     color: yellow;
-    -webkit-text-stroke: 1px;
-    -webkit-text-stroke-color: #444444;
 }
 
 .game-options .option-btn.hard:hover {
     background-image: url("https://i.pinimg.com/originals/b7/21/34/b72134112b54864e4948865375ecbb11.gif");
     color: red;
-    -webkit-text-stroke: 1px;
-    -webkit-text-stroke-color: #444444;
 }
 
 .game-options .option-btn.rufino:hover {
     background-image: url("https://media.tenor.com/6hn_hy3bBtIAAAAi/fire-demon.gif");
     color: white;
-    -webkit-text-stroke: 1px;
-    -webkit-text-stroke-color: #444444;
+}
+
+.game-board {
+    width: 80%;
+    margin: auto;
+}
+
+.game-board .board-header {
+    display: inline-flex;
+    width: 100%;
+}
+
+.game-board .board-header .return {
+    width: 50%;
+}
+
+.game-board .board-header .score {
+    width: 50%;
+}
+
+.game-board .board-header .score h3 {
+    margin-top: 0px;
+    float: right;
+}
+
+.game-board #game-active {
+    text-align: center;
+}
+
+.game-board #game-active .row {
+    display: inline-block;
+}
+
+.game-board #game-active .row .square {
+    display: table;
+    width: 25px;
+    height: 25px;
+    border: 1px solid;
+    border-color: black;
+}
+
+.game-board #game-active .row .square p {
+    display: table-cell;
+    vertical-align: middle;
 }

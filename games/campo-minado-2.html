@@ -12,20 +12,34 @@
     </head>
     <body>
         <div class="game-options">
-            <div class="option-btn easy">
+            <div class="option-btn easy" data-dif="easy">
                 <p>Facil</p>
             </div>
-            <div class="option-btn medium">
+            <div class="option-btn medium" data-dif="medium">
                 <p>Médio</p>
             </div>
-            <div class="option-btn hard">
+            <div class="option-btn hard" data-dif="hard">
                 <p>Difícil</p>
             </div>
-            <div class="option-btn rufino">
+            <div class="option-btn rufino" data-dif="rufino">
                 <p>Rufino's mod 4ss god</p>
+            </div>
+        </div>
+        <div class="game-board" style="display: none;">
+            <div class="board-header">
+                <div class="return">
+                    <button id="back-to-selection">Voltar</button>
+                </div>
+                <div class="score">
+                    <h3>Score: <b>0</b></h3>
+                </div>
+            </div>
+            <div id="game-active">
+
             </div>
         </div>
     </body>
 </html>
 
 <script src="../js/campo-minado.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
