@@ -28,13 +28,13 @@ function montaTabela (difficulty) {
 
     //8
     if (difficulty == 'easy') {
-        size = 3;
+        size = 5;
     } else if (difficulty == 'medium') {
-        size = 8;
+        size =10;
     } else if (difficulty == 'hard') {
-        size = 12;
+        size = 15;
     } else if (difficulty == 'rufino') {
-        size = 20;
+        size = 40;
     }
 
     var finalboard = '';
