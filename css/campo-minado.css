@@ -124,6 +124,7 @@
 
 .game-board #game-active {
     text-align: center;
+    display: flex;
 }
 
 .game-board #game-active .row {
