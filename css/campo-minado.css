@@ -15,3 +15,91 @@
         transform: rotate(358deg);
     } */
 }
+
+.wavy {
+    animation-name: wavy;
+    animation-duration: 1.3s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+@keyframes wavy {
+    0% {
+      top: 0px;
+    }
+    50% {
+      top: -8px;
+    }
+    100% {
+      top: 0px;
+    }
+}
+
+.title-text {
+    text-align: center;
+}
+
+.title-text img {
+    display: inline;
+    width: 40px;
+    margin-bottom: -5px;
+}
+
+.title-text h1 {
+    display: inline;
+}
+
+.game-options {
+    margin-top: 10%;
+    width: 100%;
+    display: inline-flex;
+}
+
+.game-options .option-btn {
+    width: 25%;
+    text-align: center;
+    margin: 10px;
+    color: #111111;
+    border: 1px solid;
+    border-color: #ccc;
+    border-radius: 5px;
+    background-color: rgb(216, 223, 220);
+    box-shadow: 2px 15px 13px -5px rgba(0,0,0,0.75);
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.game-options .option-btn:hover {
+    background-size: cover;
+    background-position: center;
+}
+.game-options .option-btn.easy:hover {
+    background-image: url("https://i.pinimg.com/originals/07/d0/1b/07d01b67455c637cfe6e4c6fc5aa099d.gif");
+    color: greenyellow;
+    -webkit-text-stroke: 1px;
+    -webkit-text-stroke-color: #444444;
+}
+
+.game-options .option-btn.medium:hover {
+    background-image: url("https://i.pinimg.com/originals/91/95/f4/9195f4dd1b69f90038f627c8af422429.gif");
+    color: yellow;
+    -webkit-text-stroke: 1px;
+    -webkit-text-stroke-color: #444444;
+}
+
+.game-options .option-btn.hard:hover {
+    background-image: url("https://i.pinimg.com/originals/b7/21/34/b72134112b54864e4948865375ecbb11.gif");
+    color: red;
+    -webkit-text-stroke: 1px;
+    -webkit-text-stroke-color: #444444;
+}
+
+.game-options .option-btn.rufino:hover {
+    background-image: url("https://media.tenor.com/6hn_hy3bBtIAAAAi/fire-demon.gif");
+    color: white;
+    -webkit-text-stroke: 1px;
+    -webkit-text-stroke-color: #444444;
+}
