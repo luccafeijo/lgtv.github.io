@@ -1,6 +1,7 @@
 let listaNomes = [];
 let ordem = 0;
 let inicial = true;
+let umnome = true;
 
 $( document ).ready(function() {
     $('#perguntas1').show();
@@ -45,13 +46,19 @@ $('body').on('click', '#proximoNome', function() {
             ordem = 0;
         }
     } else {
-        ordem += 1;
-        if(listaNomes[ordem+1]) {
-            mostraResultado(listaNomes[ordem], listaNomes[ordem+1]);
+        if(umnome) {
+            mostraResultado(listaNomes[ordem+1], null);
+            umnome = false;
         } else {
-            mostraResultado(listaNomes[ordem], listaNomes[0]);
-            ordem = 0;
-            inicial = true;
+            ordem += 1;
+            if(listaNomes[ordem+1]) {
+                mostraResultado(listaNomes[ordem], listaNomes[ordem+1]);
+                umnome = true;
+            } else {
+                mostraResultado(listaNomes[ordem], listaNomes[0]);
+                ordem = -1;
+                umnome = true;
+            }
         }
     }
     
