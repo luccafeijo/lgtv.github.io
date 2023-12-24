@@ -1,0 +1,72 @@
+body {
+    background-color: rgb(40, 41, 114) !important;
+}
+
+body::before {
+    content: "";
+    background-image: url("https://www.baypointelawn.com/snow-transparent.gif");
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.2;
+    z-index: 1;
+}
+
+.title-text {
+    text-align: center;
+    color: white;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #FBCF1C;
+}
+
+.title-text img {
+    display: inline;
+    width: 80px;
+    margin-bottom: -5px;
+}
+
+.title-text h1 {
+    display: inline;
+}
+
+.perguntas {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.perguntas h2 {
+    text-align: center;
+    color: white;
+}
+
+.perguntas input {
+    border-radius: 10px;
+    height: 20px;
+}
+
+.perguntas button {
+    border: 2px solid;
+    border-color: white;
+    border-radius: 20px;
+    background: rgba(27, 27, 75, 0.8);
+    color: white;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.perguntas button:hover {
+    border-color: red;
+}
+
+.perguntas p {
+    display: inline;
+    color: white;
+}
+
+#resultado p {
+    font-size: 40px;
+    display: block;
+}

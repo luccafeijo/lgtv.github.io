@@ -1,0 +1,32 @@
+.align-middle {
+    /* text-align: center; */
+}
+
+a {
+    margin: auto;
+    cursor: pointer;
+}
+
+.natal-btn {
+    background-color: #52b152;
+    width: fit-content;
+    cursor: pointer;
+    text-align: center;
+    border: 1px solid;
+    border-color: black;
+    border-radius: 10px;
+}
+
+.natal-btn p {
+    font-size: 40px;
+    margin: 30px 60px;
+    font-weight: bold;
+    color: white;
+
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #000;
+}
+
+.natal-btn p b {
+    color: red !important;
+}
