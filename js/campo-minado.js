@@ -55,25 +55,61 @@ function montaTabela (difficulty) {
     '</div>' +
     '<div class="gameplay">';
 
-    var contagem = 0;
+    var board = [];
 
+    for (var i = 0; i < size; i++) {
+        board[i] = [];
+    }
+
+    // Distribua as bombas
+    for (var i = 0; i < bombs.length; i++) {
+        var bombPos = bombs[i];
+        var row = Math.floor((bombPos - 1) / size);
+        var col = (bombPos - 1) % size;
+        board[row][col] = 'bomb';
+    }
+
+    // Marque os números ao redor das bombas
+    for (var i = 0; i < size; i++) {
+        for (var j = 0; j < size; j++) {
+            if (board[i][j] !== 'bomb') {
+                var count = 0;
+
+                // Verifique as células ao redor da célula atual
+                for (var x = Math.max(0, i - 1); x <= Math.min(size - 1, i + 1); x++) {
+                    for (var y = Math.max(0, j - 1); y <= Math.min(size - 1, j + 1); y++) {
+                        if (board[x][y] === 'bomb') {
+                            count++;
+                        }
+                    }
+                }
+
+                // Atribua o número contado à célula
+                board[i][j] = count;
+            }
+        }
+    }
+
+    // Renderize o tabuleiro com os números
     for (var i = 0; i < size; i++) {
         finalboard += "<div class='row'>";
 
-        for (var y = 0; y < size; y++) {
-            contagem++;
-            if(bombs.includes(contagem)) {
-                finalboard += "<div class='square'><p>?</p></div>";
+        for (var j = 0; j < size; j++) {
+            if (board[i][j] === 'bomb') {
+                finalboard += "<div class='square bomb'><p>💣</p></div>";
             } else {
-                finalboard += "<div class='square'><p></p></div>";
+                if(board[i][j] != 0) {
+                    finalboard += "<div class='square around-"+board[i][j]+"'><p><b>" + board[i][j] + "</b></p></div>";
+                } else {
+                    finalboard += "<div class='square none'><p></p></div>";
+                }
             }
-            // console.log(finalboard.length);
         }
 
         finalboard += "</div>";
     }
-    finalboard += "</div>" +
-    "</div>";
+
+    finalboard += "</div></div>";
 
     $('#game-active').html(finalboard);
 }

@@ -217,6 +217,39 @@
     background-color: #c0c0c0;
 }
 
+.game-board #game-active .game-case .gameplay .row .square.around-1 {
+    color: blue;
+}
+
+.game-board #game-active .game-case .gameplay .row .square.around-2 {
+    color: green;
+}
+
+.game-board #game-active .game-case .gameplay .row .square.around-3 {
+    color: red;
+}
+
+.game-board #game-active .game-case .gameplay .row .square.around-4 {
+    color: darkblue;
+}
+
+.game-board #game-active .game-case .gameplay .row .square.around-5 {
+    color: darkred;
+}
+
+.game-board #game-active .game-case .gameplay .row .square.around-6 {
+    color: darkgreen;
+;
+}
+
+.game-board #game-active .game-case .gameplay .row .square.around-7 {
+    color: darkgoldenrod;
+}
+
+.game-board #game-active .game-case .gameplay .row .square.around-7 {
+    color: darkmagenta;
+}
+
 .game-board #game-active .game-case .gameplay .row .square p {
     display: table-cell;
     text-align: center;
