@@ -37,17 +37,32 @@ function montaTabela (difficulty) {
         size = 40;
     }
 
-    var finalboard = '';
+    var finalboard = '<div class="game-case">' +
+    '<div class="case-header">' +
+        '<div class="timer">' +
+            '<p class="numbers">000</p>' +
+        '</div>' +
+        '<div class="emoji">' +
+            '<p class="emojip">🙂</p>' +
+        '</div>' +
+        '<div class="score">' +
+            '<p class="numbers">000</p>' +
+        '</div>' +
+    '</div>' +
+    '<div class="gameplay">';
+
     for (var i = 0; i < size; i++) {
         finalboard += "<div class='row'>";
 
         for (var y = 0; y < size; y++) {
-            finalboard += "<div class='square'><p>?</p></div>";
-            console.log(finalboard.length)
+            finalboard += "<div class='square'><p></p></div>";
+            // console.log(finalboard.length);
         }
 
-        finalboard += "</div>"
+        finalboard += "</div>";
     }
+    finalboard += "</div>" +
+    "</div>";
 
     $('#game-active').html(finalboard);
 }

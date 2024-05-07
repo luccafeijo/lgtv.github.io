@@ -1,4 +1,5 @@
-@font-face { font-family: 'Solid_Stencil_2023'; src: url('../sources/fonts/Solid_Stencil_2023.ttf'); } 
+@font-face { font-family: 'Solid_Stencil_2023'; src: url('../sources/fonts/Solid_Stencil_2023.ttf'); }
+@font-face { font-family: 'Seven Segment'; src: url('../sources/fonts/Seven_Segment.ttf'); }
 @media only screen and (min-width: 768px) {
     /* For desktop: */
         body h1 {
@@ -113,33 +114,110 @@
     width: 50%;
 }
 
-.game-board .board-header .score {
-    width: 50%;
-}
-
-.game-board .board-header .score h3 {
-    margin-top: 0px;
-    float: right;
-}
-
 .game-board #game-active {
     justify-content: center;
     display: flex;
 }
 
-.game-board #game-active .row {
+.game-board #game-active .game-case {
+    padding: 10px;
+    border: 3px solid;
+    border-top-color: #fafffe;
+    border-left-color: #fafffe;
+    border-right-color: #7e7e7f;
+    border-bottom-color: #7e7e7f;
+    background-color: #c0c0c0;
+}
+
+.game-board #game-active .game-case .case-header {
+    display: inline-flex;
+    width: 100%;
+    box-sizing: border-box;
+    border: 3px solid;
+    border-top-color: #7e7e7f;
+    border-left-color: #7e7e7f;
+    border-right-color: #fafffe;
+    border-bottom-color: #fafffe;
+}
+
+.game-board #game-active .game-case .case-header .timer,
+.game-board #game-active .game-case .case-header .score {
+    width: 38%;
+}
+
+.game-board #game-active .game-case .case-header p.numbers {
+    margin: 3px;
+    font-family: 'Seven Segment';
+    font-size: 28px;
+    background-color: black;
+    color: orangered;
+    text-shadow: 0px 0px 7px rgba(255,116,64,0.95);
+    border: 2px solid;
+    border-top-color: #7e7e7f;
+    border-left-color: #7e7e7f;
+    border-right-color: #fafffe;
+    border-bottom-color: #fafffe;
+}
+
+.game-board #game-active .game-case .case-header .timer p {
+    float: left;
+}
+
+.game-board #game-active .game-case .case-header .score p {
+    float: right;
+}
+
+.game-board #game-active .game-case .case-header .emoji {
+    width: 24%;
+    height: fit-content;
+    display: ruby;
+    text-align: center;
+}
+
+.game-board #game-active .game-case .case-header p.emojip {
+    margin: 3px;
+    width: 34px;
+    height: 34px;
+    box-sizing: border-box;
+    padding-left: 2px;
+    padding-right: 2px;
+    font-size: 26px;
+    text-align: center;
+    border: 2px solid;
+    border-top-color: #fafffe;
+    border-left-color: #fafffe;
+    border-right-color: #7e7e7f;
+    border-bottom-color: #7e7e7f;
+}
+
+.game-board #game-active .game-case .gameplay,
+.game-board #game-active .game-case .gameplay-header {
+    display: flex;
+    width: fit-content;
+    border: 3px solid;
+    border-top-color: #7e7e7f;
+    border-left-color: #7e7e7f;
+    border-right-color: #fafffe;
+    border-bottom-color: #fafffe;
+}
+
+.game-board #game-active .game-case .gameplay .row {
     display: inline-block;
 }
 
-.game-board #game-active .row .square {
+.game-board #game-active .game-case .gameplay .row .square {
     display: table;
     width: 25px;
     height: 25px;
-    border: 1px solid;
-    border-color: black;
+    border: 3px solid;
+    border-top-color: #fafffe;
+    border-left-color: #fafffe;
+    border-right-color: #7e7e7f;
+    border-bottom-color: #7e7e7f;
+    background-color: #c0c0c0;
 }
 
-.game-board #game-active .row .square p {
+.game-board #game-active .game-case .gameplay .row .square p {
     display: table-cell;
     text-align: center;
     vertical-align: middle;
