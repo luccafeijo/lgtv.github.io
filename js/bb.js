@@ -13,13 +13,22 @@ function MostraMesDias(inicio, hoje) {
 
     //removendo a diferença, a data vai ficar como dia 1
     inicio.setDate(inicio.getDate() - diff);
+    
+    var anoinicio = Math.abs(inicio.getFullYear());
+    var anohoje = Math.abs(hoje.getFullYear());
+
+    var diferenca_ano = 0;
+
+    if(anohoje > anoinicio) {
+        diferenca_ano = 12 * (anohoje-anoinicio);
+    }
+    
     var mesinicio = Math.abs(inicio.getMonth()+1); //+1 apenas para deixar a numeracao correta, ja que "janeiro" começa com o valor "0"
 
     //removendo a diferença que possuia do inicio, hoje pode acabar mudando de mês, e com isso, verificar se é diferente do mês de inicio
     hoje.setDate(hoje.getDate() - diff);
     var meshoje = Math.abs(hoje.getMonth()+1); //+1 apenas para deixar a numeracao correta, ja que "janeiro" começa com o valor "0"
-
-    exibir = meshoje - mesinicio;
+    exibir = (meshoje - mesinicio) + diferenca_ano;
      
     return "<p>"+exibir+" meses e "+ Math.abs(hoje.getDate()-1) +" dias</p>";
 }
@@ -95,7 +104,7 @@ function Curiosidade(inicio, hoje) {
         "51 cm", //40
     ];
 
-    if (semanas >= 1 <= 40) {
+    if (semanas >= 1 && semanas <= 40) {
         if (semanas == 1) {
             return "<p>Você já descobriu a gravidez? sério?</p>";
         } else if (semanas == 2) {
@@ -106,7 +115,7 @@ function Curiosidade(inicio, hoje) {
             return "<p>aproximadamente "+ semanaTamanho[semanas] +"</p>";
         }
     } else {
-        return "<p>Vix, sei não</p>";
+        return "<p>Vix, sei não, deve estar gigante!</p>";
     }
 }
 
