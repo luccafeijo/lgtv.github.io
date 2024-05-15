@@ -143,11 +143,12 @@
 
 .game-board #game-active .game-case .case-header .timer,
 .game-board #game-active .game-case .case-header .score {
-    width: 38%;
+    width: 30%;
 }
 
 .game-board #game-active .game-case .case-header p.numbers {
-    margin: 3px;
+    margin: 6px;
+    padding: 0px 4px;
     font-family: 'Seven Segment';
     font-size: 28px;
     background-color: black;
@@ -169,7 +170,7 @@
 }
 
 .game-board #game-active .game-case .case-header .emoji {
-    width: 24%;
+    width: 40%;
     height: fit-content;
     display: ruby;
     text-align: center;
@@ -217,6 +218,7 @@
     border-right-color: #7e7e7f;
     border-bottom-color: #7e7e7f;
     background-color: #c0c0c0;
+    cursor: pointer;
 }
 
 .game-board #game-active .game-case .gameplay .row .square.around-1 {
@@ -253,7 +255,20 @@
 }
 
 .game-board #game-active .game-case .gameplay .row .square p {
-    display: table-cell;
+    display: none;
+    /* display: table-cell; */
     text-align: center;
     vertical-align: middle;
+}
+
+.game-board #game-active .game-case .gameplay .row .square.showing {
+    background-color: #B2B2B2 !important;
+    padding: 2px !important;
+    border: 1px solid !important;
+    border-color: #7e7e7f !important;
+    cursor: default;
+}
+
+.game-board #game-active .game-case .gameplay .row .square.showing p {
+    display: table-cell !important;
 }

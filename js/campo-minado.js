@@ -22,14 +22,21 @@ $('#back-to-selection').click(function () {
     $('.game-options').show();
 });
 
+$(document).on('click','.square',function(){
+    console.log("teste");
+    this.classList.add("showing");
+});
+
 function montaTabela (difficulty) {
     //default
     var size = 1;
 
     //8
+    var num = '<p class="numbers">000</p>';
     if (difficulty == 'easy') {
         size = 5;
         bombs = espalhaBombas(4, 25);
+        num = '<p class="numbers">00</p>';
     } else if (difficulty == 'medium') {
         size =10;
         bombs = espalhaBombas(25, 100);
@@ -39,18 +46,19 @@ function montaTabela (difficulty) {
     } else if (difficulty == 'rufino') {
         size = 40;
         bombs = espalhaBombas(700, 1600);
+        num = '<p class="numbers">0000</p>';
     }
 
     var finalboard = '<div class="game-case">' +
     '<div class="case-header">' +
         '<div class="timer">' +
-            '<p class="numbers">000</p>' +
+            num +
         '</div>' +
         '<div class="emoji">' +
             '<p class="emojip">🙂</p>' +
         '</div>' +
         '<div class="score">' +
-            '<p class="numbers">000</p>' +
+            num +
         '</div>' +
     '</div>' +
     '<div class="gameplay">';
