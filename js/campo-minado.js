@@ -1,20 +1,29 @@
+
+
 $( document ).ready(function() {
     animacaoTitulo();
+    var gametimer;
+    var difficulty;
 });
 
 $('.option-btn').click(function () {
 
-    var difficulty = $(this).data('dif');
+    difficulty = $(this).data('dif');
     //esconde seleção
     $('.game-options').hide();
 
     //inicia o game
     $('.game-board').show();
-    // espalhaBomba();
     montaTabela(difficulty);
 });
 
+$(document).on('click','.emojip',function(){
+    reset();
+});
+
+
 $('#back-to-selection').click(function () {
+    clearInterval(gametimer);
     //esconde board
     $('.game-board').hide();
     
@@ -23,8 +32,11 @@ $('#back-to-selection').click(function () {
 });
 
 $(document).on('click','.square',function(){
-    console.log("teste");
-    this.classList.add("showing");
+    console.log(this.classList.contains("showing"));
+    if(!this.classList.contains("showing")) {
+        checkBomb(this);
+        this.classList.add("showing");
+    }
 });
 
 function montaTabela (difficulty) {
@@ -32,11 +44,14 @@ function montaTabela (difficulty) {
     var size = 1;
 
     //8
-    var num = '<p class="numbers">000</p>';
+    var num = '000';
+    var minwid = '55px';
+    
     if (difficulty == 'easy') {
-        size = 5;
-        bombs = espalhaBombas(4, 25);
-        num = '<p class="numbers">00</p>';
+        size = 6;
+        bombs = espalhaBombas(4, 36);
+        num = '00';
+        minwid = '41px';
     } else if (difficulty == 'medium') {
         size =10;
         bombs = espalhaBombas(25, 100);
@@ -46,19 +61,25 @@ function montaTabela (difficulty) {
     } else if (difficulty == 'rufino') {
         size = 40;
         bombs = espalhaBombas(700, 1600);
-        num = '<p class="numbers">0000</p>';
+        num = '0000';
+        minwid = '69px';
     }
+
+    iniciaTimer(num.length);
+
+    var timenum = '<p class="timer-numbers" style="min-width: '+minwid+'">'+num+'</p>';
+    var scorenum = '<p class="score-numbers" style="min-width: '+minwid+'">'+num+'</p>';
 
     var finalboard = '<div class="game-case">' +
     '<div class="case-header">' +
         '<div class="timer">' +
-            num +
+        timenum +
         '</div>' +
         '<div class="emoji">' +
             '<p class="emojip">🙂</p>' +
         '</div>' +
         '<div class="score">' +
-            num +
+        scorenum +
         '</div>' +
     '</div>' +
     '<div class="gameplay">';
@@ -157,4 +178,40 @@ function espalhaBombas(quantidade, totalArea) {
 
 function getRandomNumber(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
-  }
+}
+
+function checkBomb(el) {
+    if (el.classList.contains("bomb")) {
+       lose();
+    } else {
+
+    }
+}
+
+function iniciaTimer(size){
+    var timer = 0;
+    gametimer = setInterval(function() {
+        timer++;
+
+        if (timer.toString().length <= size) {
+            num = timer.toString();
+            while (num.length < size) num = "0" + num;
+            $('.timer-numbers').html(num);
+        } else {
+            alert("Acabou o tempo mané");
+            lose();
+        }
+        
+      }, 1000);
+}
+
+function reset() {
+    clearInterval(gametimer);
+    montaTabela(difficulty);
+}
+
+function lose(){
+    clearInterval(gametimer);
+    $('.square').addClass("showing");
+    $('.emojip').html("☠️");
+}

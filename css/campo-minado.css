@@ -1,5 +1,6 @@
 @font-face { font-family: 'Solid_Stencil_2023'; src: url('../sources/fonts/Solid_Stencil_2023.ttf'); }
 @font-face { font-family: 'Seven Segment'; src: url('../sources/fonts/Seven_Segment.ttf'); }
+
 @media only screen and (min-width: 768px) {
     /* For desktop: */
         body h1 {
@@ -143,10 +144,12 @@
 
 .game-board #game-active .game-case .case-header .timer,
 .game-board #game-active .game-case .case-header .score {
-    width: 30%;
+    width: 35%;
 }
 
-.game-board #game-active .game-case .case-header p.numbers {
+.game-board #game-active .game-case .case-header p.timer-numbers,
+.game-board #game-active .game-case .case-header p.score-numbers {
+    min-width: -webkit-fill-available;
     margin: 6px;
     padding: 0px 4px;
     font-family: 'Seven Segment';
@@ -170,7 +173,7 @@
 }
 
 .game-board #game-active .game-case .case-header .emoji {
-    width: 40%;
+    width: 30%;
     height: fit-content;
     display: ruby;
     text-align: center;
