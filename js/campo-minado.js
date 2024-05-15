@@ -32,7 +32,6 @@ $('#back-to-selection').click(function () {
 });
 
 $(document).on('click','.square',function(){
-    console.log(this.classList.contains("showing"));
     if(!this.classList.contains("showing")) {
         checkBomb(this);
         this.classList.add("showing");
@@ -184,7 +183,10 @@ function checkBomb(el) {
     if (el.classList.contains("bomb")) {
        lose();
     } else {
-
+        $('.emojip').html("😲");
+        setTimeout(function (){
+            $('.emojip').html("🙂")
+        }, 200);
     }
 }
 

@@ -194,6 +194,7 @@
     border-left-color: #fafffe;
     border-right-color: #7e7e7f;
     border-bottom-color: #7e7e7f;
+    cursor: pointer;
 }
 
 .game-board #game-active .game-case .gameplay,
