@@ -4,7 +4,7 @@ body {
 
 body::before {
     content: "";
-    background-image: url("https://www.baypointelawn.com/snow-transparent.gif");
+    background-image: url("../sources/images/snow-rain-transparent.gif");
     position: absolute;
     top: 0px;
     right: 0px;

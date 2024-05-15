@@ -74,6 +74,7 @@
 }
 
 .game-options .option-btn:hover {
+    cursor: pointer;
     background-size: cover;
     background-position: center;
     -webkit-text-stroke: 1px;
@@ -81,22 +82,22 @@
 }
 
 .game-options .option-btn.easy:hover {
-    background-image: url("https://i.pinimg.com/originals/07/d0/1b/07d01b67455c637cfe6e4c6fc5aa099d.gif");
+    background-image: url("../sources/images/easy-bg.gif");
     color: greenyellow;
 }
 
 .game-options .option-btn.medium:hover {
-    background-image: url("https://i.pinimg.com/originals/91/95/f4/9195f4dd1b69f90038f627c8af422429.gif");
+    background-image: url("../sources/images/medium-bg.gif");
     color: yellow;
 }
 
 .game-options .option-btn.hard:hover {
-    background-image: url("https://i.pinimg.com/originals/b7/21/34/b72134112b54864e4948865375ecbb11.gif");
+    background-image: url("../sources/images/hard-bg.gif");
     color: red;
 }
 
 .game-options .option-btn.rufino:hover {
-    background-image: url("https://media.tenor.com/6hn_hy3bBtIAAAAi/fire-demon.gif");
+    background-image: url("../sources/images/rufino-bg.gif");
     color: white;
 }
 
@@ -175,6 +176,7 @@
 }
 
 .game-board #game-active .game-case .case-header p.emojip {
+    display: inline-table;
     margin: 3px;
     width: 34px;
     height: 34px;
