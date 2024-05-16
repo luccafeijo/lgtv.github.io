@@ -1,9 +1,12 @@
 
+    var gametimer;
+    var score = 0;
+    var showscore;
+    var difficulty;
+    var numbershowsize = 3;
 
 $( document ).ready(function() {
     animacaoTitulo();
-    var gametimer;
-    var difficulty;
 });
 
 $('.option-btn').click(function () {
@@ -50,21 +53,25 @@ function montaTabela (difficulty) {
         size = 6;
         bombs = espalhaBombas(4, 36);
         num = '00';
+        numbershowsize = 2;
         minwid = '41px';
     } else if (difficulty == 'medium') {
         size =10;
+        numbershowsize = 3;
         bombs = espalhaBombas(25, 100);
     } else if (difficulty == 'hard') {
         size = 15;
         bombs = espalhaBombas(80, 225);
     } else if (difficulty == 'rufino') {
         size = 40;
+        numbershowsize = 3;
         bombs = espalhaBombas(700, 1600);
         num = '0000';
+        numbershowsize = 4;
         minwid = '69px';
     }
 
-    iniciaTimer(num.length);
+    iniciaTimer(numbershowsize);
 
     var timenum = '<p class="timer-numbers" style="min-width: '+minwid+'">'+num+'</p>';
     var scorenum = '<p class="score-numbers" style="min-width: '+minwid+'">'+num+'</p>';
@@ -183,6 +190,10 @@ function checkBomb(el) {
     if (el.classList.contains("bomb")) {
        lose();
     } else {
+        score++;
+        showscore = score.toString();
+        while (showscore.length < numbershowsize) showscore = "0" + showscore;
+        $('.score-numbers').html(showscore);
         $('.emojip').html("😲");
         setTimeout(function (){
             $('.emojip').html("🙂")
@@ -216,4 +227,5 @@ function lose(){
     clearInterval(gametimer);
     $('.square').addClass("showing");
     $('.emojip').html("☠️");
+    score = 0;
 }
