@@ -38,6 +38,15 @@ $(document).on('click','.square',function(){
     if(!this.classList.contains("showing")) {
         checkBomb(this);
         this.classList.add("showing");
+        if (difficulty == 'easy' && score == 32) {
+            wingame();
+        } else if (difficulty == 'medium' && score == 75) {
+            wingame();
+        } else if (difficulty == 'hard' && score == 145) {
+            wingame();
+        } else if (difficulty == 'rufino' && score == 900) {
+            wingame();
+        }
     }
 });
 
@@ -228,4 +237,13 @@ function lose(){
     $('.square').addClass("showing");
     $('.emojip').html("☠️");
     score = 0;
+}
+
+function wingame() {
+    clearInterval(gametimer);
+
+    setTimeout(function (){
+        $('.emojip').html("😎");
+        alert("GG");
+    }, 300);
 }

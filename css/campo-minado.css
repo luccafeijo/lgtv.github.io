@@ -225,6 +225,11 @@
     cursor: pointer;
 }
 
+/* apenas para teste */
+.game-board.code1 #game-active .game-case .gameplay .row .square.bomb {
+    background-color: red !important;
+}
+
 .game-board #game-active .game-case .gameplay .row .square.around-1 {
     color: blue;
 }
