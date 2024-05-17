@@ -51,6 +51,21 @@ $(document).on('click','.square',function() {
     }
 });
 
+$('#secret').click(function () {
+    $('.secret').show();
+});
+
+$('#apply-code').click(function () {
+    var secretCode = $('#code').val();
+    if (secretCode == 'wallhack') {
+        wallhack();
+    } else if (secretCode == '') {
+        clearCodes();
+    }
+    $('#code').val("");
+    $('.secret').hide();
+});
+
 function montaTabela (difficulty) {
     //default
     var size = 1;
@@ -248,4 +263,14 @@ function wingame(totalScore, TimeBonusScore) {
         $('.emojip').html("😎");
         alert("GG \nPontuação: " + totalScore + "\nBonus de tempo: " + TimeBonusScore + "\nPontuação Total: " + (totalScore + TimeBonusScore));
     }, 300);
+}
+
+// Codes
+
+function wallhack(){
+    $('.game-board').addClass("code1");
+}
+
+function clearCodes(){
+    $('.game-board').removeClass("code1");
 }

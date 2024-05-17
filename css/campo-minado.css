@@ -102,6 +102,31 @@
     color: white;
 }
 
+.secret {
+    border: 2px solid #ccc;
+    border-radius: 20px;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    margin: 10% 25%;
+    width: 30%;
+    height: 15%;
+    overflow: auto;
+    background: rgba(100, 100, 100, 0.8);
+    padding: 5% 10%;
+}
+
+.secret h2{
+    color: #FFF;
+    text-align: center;
+}
+
+.secret .input-code {
+    width: 100%;
+    text-align: center;
+}
+
 .game-board {
     width: 80%;
     margin: auto;
@@ -170,6 +195,7 @@
 
 .game-board #game-active .game-case .case-header .score p {
     float: right;
+    text-align: right;
 }
 
 .game-board #game-active .game-case .case-header .emoji {

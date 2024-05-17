@@ -6,7 +6,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
         <link rel="stylesheet" href="../css/campo-minado.css">
         <div class="title-text">
-            <img src="../sources/images/crazy-bomb.gif">
+            <img id="secret" src="../sources/images/crazy-bomb.gif">
             <h1 id="wave_animated">Campo Minado 2</h1>
         </div>
     </head>
@@ -33,6 +33,13 @@
             </div>
             <div id="game-active">
 
+            </div>
+        </div>
+        <div class="secret"  style="display: none;">
+            <h2>Secret Code:</h2>
+            <div class="input-code">
+                <input name="code" id="code">
+                <button id="apply-code">Do the thing!</button>
             </div>
         </div>
     </body>
