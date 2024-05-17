@@ -1,5 +1,6 @@
 
     var gametimer;
+    var gametimerValue = 0;
     var score = 0;
     var showscore;
     var difficulty;
@@ -34,18 +35,18 @@ $('#back-to-selection').click(function () {
     $('.game-options').show();
 });
 
-$(document).on('click','.square',function(){
+$(document).on('click','.square',function() {
     if(!this.classList.contains("showing")) {
         checkBomb(this);
         this.classList.add("showing");
         if (difficulty == 'easy' && score == 32) {
-            wingame();
+            wingame(score, (99 - gametimerValue));
         } else if (difficulty == 'medium' && score == 75) {
-            wingame();
+            wingame(score, (999 - gametimerValue));
         } else if (difficulty == 'hard' && score == 145) {
-            wingame();
+            wingame(score, (999 - gametimerValue));
         } else if (difficulty == 'rufino' && score == 900) {
-            wingame();
+            wingame(score, (9999 - gametimerValue));
         }
     }
 });
@@ -218,7 +219,8 @@ function iniciaTimer(size){
         if (timer.toString().length <= size) {
             num = timer.toString();
             while (num.length < size) num = "0" + num;
-            $('.timer-numbers').html(num);
+            gametimerValue = num;
+            $('.timer-numbers').html(gametimerValue);
         } else {
             alert("Acabou o tempo mané");
             lose();
@@ -239,11 +241,11 @@ function lose(){
     score = 0;
 }
 
-function wingame() {
+function wingame(totalScore, TimeBonusScore) {
     clearInterval(gametimer);
-
+    score = 0;
     setTimeout(function (){
         $('.emojip').html("😎");
-        alert("GG");
+        alert("GG \nPontuação: " + totalScore + "\nBonus de tempo: " + TimeBonusScore + "\nPontuação Total: " + (totalScore + TimeBonusScore));
     }, 300);
 }
