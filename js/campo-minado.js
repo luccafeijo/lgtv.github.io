@@ -37,8 +37,8 @@ $('#back-to-selection').click(function () {
 
 $(document).on('click','.square',function() {
     if(!this.classList.contains("showing")) {
-        checkBomb(this);
         this.classList.add("showing");
+        checkBomb(this);
         if (difficulty == 'easy' && score == 32) {
             wingame(score, (99 - gametimerValue));
         } else if (difficulty == 'medium' && score == 75) {
