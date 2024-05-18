@@ -241,10 +241,10 @@ function triggerClickAround(atual, size) {
     bordaInferior = [ultimo];
 
     for (var i = 1; i < size; i++) {
-        primeiro += 6;
+        primeiro += parseInt(size);
         bordaSuperior.push(primeiro);
 
-        ultimo += 6;
+        ultimo += parseInt(size);
         bordaInferior.push(ultimo);
     }
 
@@ -339,8 +339,8 @@ function triggerClickAround(atual, size) {
 
     emvolta.forEach(function(numero, i) {
         if(numero >= 1 && numero <= ultimo) {
-            // $('.num-'+numero).trigger('click');
-            $('.num-'+numero).addClass("showing");
+            $('.num-'+numero).trigger('click');
+            // $('.num-'+numero).addClass("showing");
         }
     });
 }
