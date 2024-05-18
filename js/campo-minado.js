@@ -151,17 +151,20 @@ function montaTabela (difficulty) {
     }
 
     // Renderize o tabuleiro com os números
+
+    var squarenum = 0;
     for (var i = 0; i < size; i++) {
-        finalboard += "<div class='row'>";
+        finalboard += "<div class='row' data-size='"+size+"'>";
 
         for (var j = 0; j < size; j++) {
+            squarenum++;
             if (board[i][j] === 'bomb') {
-                finalboard += "<div class='square bomb'><p>💣</p></div>";
+                finalboard += "<div class='square bomb num-"+squarenum+"' data-num='"+squarenum+"'><p>💣</p></div>";
             } else {
                 if(board[i][j] != 0) {
-                    finalboard += "<div class='square around-"+board[i][j]+"'><p><b>" + board[i][j] + "</b></p></div>";
+                    finalboard += "<div class='square num-"+squarenum+" around-"+board[i][j]+"' data-num='"+squarenum+"'><p><b>" + board[i][j] + "</b></p></div>";
                 } else {
-                    finalboard += "<div class='square none'><p></p></div>";
+                    finalboard += "<div class='square num-"+squarenum+" none' data-num='"+squarenum+"'><p></p></div>";
                 }
             }
         }
@@ -180,7 +183,6 @@ function animacaoTitulo(){
     
     let h1 = document.getElementById("wave_animated");
 
-    // console.log(h1.innerHTML.split(""));
     text = h1.innerHTML;
     h1.innerHTML = text
     .split("")
@@ -218,12 +220,129 @@ function checkBomb(el) {
         score++;
         showscore = score.toString();
         while (showscore.length < numbershowsize) showscore = "0" + showscore;
+        if (el.classList.contains("none")) {
+            triggerClickAround(el.dataset.num, el.parentElement.dataset.size);
+        }
         $('.score-numbers').html(showscore);
         $('.emojip').html("😲");
         setTimeout(function (){
             $('.emojip').html("🙂")
         }, 200);
     }
+}
+
+function triggerClickAround(atual, size) {
+    primeiro = 1;
+    bordaEsquerda = [];
+    bordaDireita = [];
+    bordaSuperior = [primeiro];
+
+    ultimo = parseInt(size);
+    bordaInferior = [ultimo];
+
+    for (var i = 1; i < size; i++) {
+        primeiro += 6;
+        bordaSuperior.push(primeiro);
+
+        ultimo += 6;
+        bordaInferior.push(ultimo);
+    }
+
+    for (var i = 1; i <= size; i++) {
+        bordaEsquerda.push(i);
+        bordaDireita.push(ultimo + 1 - i);
+    }
+
+    // console.log(bordaEsquerda);
+    // console.log(bordaDireita);
+    // console.log(bordaSuperior);
+    // console.log(bordaInferior);
+
+    emvolta = [];
+    const actualSquare = parseInt(atual);
+    const actualSize = parseInt(size);
+
+    // console.log(actualSquare);
+    // console.log(actualSize);
+    if(bordaSuperior.includes(actualSquare)) {
+        //canto superior esquerdo
+        if (bordaEsquerda.includes(actualSquare)) {
+            emvolta.push((actualSquare + 1));
+            emvolta.push((actualSquare + actualSize));
+            emvolta.push((actualSquare + actualSize + 1));
+        
+        //canto superior direito
+        } else if (bordaDireita.includes(actualSquare)) {
+            emvolta.push((actualSquare - actualSize));
+            emvolta.push((actualSquare - actualSize + 1));
+            emvolta.push((actualSquare + 1));
+
+        //canto superior no meio
+        } else {
+            emvolta.push((actualSquare - actualSize));
+            emvolta.push((actualSquare - actualSize + 1));
+
+            emvolta.push((actualSquare + 1));
+
+            emvolta.push((actualSquare + actualSize));
+            emvolta.push((actualSquare + actualSize + 1));
+        }
+    } else if (bordaInferior.includes(actualSquare)) {
+       //canto inferior esquerdo
+        if (bordaEsquerda.includes(actualSquare)) {
+            emvolta.push((actualSquare - 1));
+            emvolta.push((actualSquare + actualSize - 1));
+            emvolta.push((actualSquare + actualSize));
+    
+        //canto inferior direito
+        } else if (bordaDireita.includes(actualSquare)) {
+            emvolta.push((actualSquare - actualSize - 1));
+            emvolta.push((actualSquare - actualSize));
+            emvolta.push((actualSquare - 1));
+
+        //canto inferior no meio
+        } else {
+            emvolta.push((actualSquare - actualSize - 1));
+            emvolta.push((actualSquare - actualSize));
+
+            emvolta.push((actualSquare - 1));
+
+            emvolta.push((actualSquare + actualSize - 1));
+            emvolta.push((actualSquare + actualSize));
+        }
+    } else if (bordaEsquerda.includes(actualSquare)) {
+        emvolta.push((actualSquare - 1));
+        emvolta.push((actualSquare + 1));
+
+        emvolta.push((actualSquare + actualSize - 1));
+        emvolta.push((actualSquare + actualSize));
+        emvolta.push((actualSquare + actualSize + 1));
+    } else if (bordaDireita.includes(actualSquare)) {
+        emvolta.push((actualSquare - actualSize - 1));
+        emvolta.push((actualSquare - actualSize));
+        emvolta.push((actualSquare - actualSize + 1));
+
+        emvolta.push((actualSquare - 1));
+        emvolta.push((actualSquare + 1));
+    } else {
+        emvolta.push((actualSquare - actualSize - 1));
+        emvolta.push((actualSquare - actualSize));
+        emvolta.push((actualSquare - actualSize + 1));
+
+        emvolta.push((actualSquare - 1));
+        emvolta.push((actualSquare + 1));
+
+        emvolta.push((actualSquare + actualSize - 1));
+        emvolta.push((actualSquare + actualSize));
+        emvolta.push((actualSquare + actualSize + 1));
+    }
+
+    emvolta.forEach(function(numero, i) {
+        if(numero >= 1 && numero <= ultimo) {
+            // $('.num-'+numero).trigger('click');
+            $('.num-'+numero).addClass("showing");
+        }
+    });
 }
 
 function iniciaTimer(size){
@@ -245,6 +364,7 @@ function iniciaTimer(size){
 }
 
 function reset() {
+    score = 0;
     clearInterval(gametimer);
     montaTabela(difficulty);
 }
