@@ -5,6 +5,7 @@
     var showscore;
     var difficulty;
     var numbershowsize = 3;
+    var flag = 0;
 
 $( document ).ready(function() {
     animacaoTitulo();
@@ -35,19 +36,24 @@ $('#back-to-selection').click(function () {
     $('.game-options').show();
 });
 
-$(document).on('click','.square',function() {
-    if(!this.classList.contains("showing")) {
-        this.classList.add("showing");
-        checkBomb(this);
-        if (difficulty == 'easy' && score == 32) {
-            wingame(score, (99 - gametimerValue));
-        } else if (difficulty == 'medium' && score == 75) {
-            wingame(score, (999 - gametimerValue));
-        } else if (difficulty == 'hard' && score == 145) {
-            wingame(score, (999 - gametimerValue));
-        } else if (difficulty == 'rufino' && score == 900) {
-            wingame(score, (9999 - gametimerValue));
+$(document).on("keypress", function (e) {
+    // use e.which
+    if(e.keyCode == 102) {
+        if(flag == 0) {
+            flag = 1;
+            $('.flag-notification').show();
+        } else {
+            flag = 0;
+            $('.flag-notification').hide();
         }
+    }
+});
+
+$(document).on('click','.square',function() {
+    if(!flag) {
+        checkSquare(this);
+    } else {
+        setFlag(this);
     }
 });
 
@@ -213,6 +219,26 @@ function getRandomNumber(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+function checkSquare(element) {
+    if(!element.classList.contains("showing")) {
+        element.classList.add("showing");
+        checkBomb(element);
+        if (difficulty == 'easy' && score == 32) {
+            wingame(score, (99 - gametimerValue));
+        } else if (difficulty == 'medium' && score == 75) {
+            wingame(score, (999 - gametimerValue));
+        } else if (difficulty == 'hard' && score == 145) {
+            wingame(score, (999 - gametimerValue));
+        } else if (difficulty == 'rufino' && score == 900) {
+            wingame(score, (9999 - gametimerValue));
+        }
+    }
+}
+
+function setFlag(element){
+    console.log("vai setar a flag");
+}
+
 function checkBomb(el) {
     if (el.classList.contains("bomb")) {
        lose();
@@ -253,17 +279,10 @@ function triggerClickAround(atual, size) {
         bordaDireita.push(ultimo + 1 - i);
     }
 
-    // console.log(bordaEsquerda);
-    // console.log(bordaDireita);
-    // console.log(bordaSuperior);
-    // console.log(bordaInferior);
-
     emvolta = [];
     const actualSquare = parseInt(atual);
     const actualSize = parseInt(size);
 
-    // console.log(actualSquare);
-    // console.log(actualSize);
     if(bordaSuperior.includes(actualSquare)) {
         //canto superior esquerdo
         if (bordaEsquerda.includes(actualSquare)) {
