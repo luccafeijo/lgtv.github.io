@@ -57,6 +57,12 @@ $(document).on('click','.square',function() {
     }
 });
 
+$(document).on('click','.square-flag',function() {
+    if(flag) {
+        $('.flag-'+this.dataset.num).hide();
+    }
+});
+
 $('#secret').click(function () {
     $('.secret').show();
 });
@@ -164,6 +170,7 @@ function montaTabela (difficulty) {
 
         for (var j = 0; j < size; j++) {
             squarenum++;
+            finalboard += "<div class='square-flag flag-"+squarenum+"' data-num='"+squarenum+"'><p>🚩</p></div>";
             if (board[i][j] === 'bomb') {
                 finalboard += "<div class='square bomb num-"+squarenum+"' data-num='"+squarenum+"'><p>💣</p></div>";
             } else {
@@ -236,7 +243,8 @@ function checkSquare(element) {
 }
 
 function setFlag(element){
-    console.log("vai setar a flag");
+    // console.log(element.dataset.num);
+    $('.flag-'+element.dataset.num).show();
 }
 
 function checkBomb(el) {

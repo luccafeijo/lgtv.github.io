@@ -267,9 +267,27 @@
     cursor: pointer;
 }
 
-/* apenas para teste */
-.game-board.code1 #game-active .game-case .gameplay .row .square.bomb {
-    background-color: red !important;
+.game-board #game-active .game-case .gameplay .row .square-flag {
+    display: none;
+    /* display: table; */
+    width: 25px;
+    height: 25px;
+    border: 3px solid;
+    border-top-color: #fafffe;
+    border-left-color: #fafffe;
+    border-right-color: #7e7e7f;
+    border-bottom-color: #7e7e7f;
+    background-color: #c0c0c0;
+    cursor: pointer;
+
+    margin-bottom: -31px;
+    position: sticky;
+}
+
+.game-board #game-active .game-case .gameplay .row .square-flag p {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
 }
 
 .game-board #game-active .game-case .gameplay .row .square.around-1 {
@@ -322,4 +340,9 @@
 
 .game-board #game-active .game-case .gameplay .row .square.showing p {
     display: table-cell !important;
+}
+
+/* códigos */
+.game-board.code1 #game-active .game-case .gameplay .row .square.bomb {
+    background-color: red !important;
 }
