@@ -130,6 +130,16 @@
     padding: 5% 10%;
 }
 
+.secret .close-secret {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    color: #FFF;
+    margin: 10px 10px 0px 0px;
+    font-family: cursive;
+    cursor: pointer;
+}
+
 .secret h2{
     color: #FFF;
     text-align: center;

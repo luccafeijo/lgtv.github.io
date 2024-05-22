@@ -74,6 +74,12 @@ $(document).on('click','.square-flag',function() {
 
 $('#secret').click(function () {
     $('.secret').show();
+    $('#code').focus();
+});
+
+$('.close-secret').click(function () {
+    $('#code').val("");
+    $('.secret').hide();
 });
 
 $("#code").on("keypress", function (e) {
