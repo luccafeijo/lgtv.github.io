@@ -230,13 +230,14 @@ function checkSquare(element) {
     if(!element.classList.contains("showing")) {
         element.classList.add("showing");
         checkBomb(element);
+
         if (difficulty == 'easy' && score == 32) {
             wingame(score, (99 - gametimerValue));
-        } else if (difficulty == 'medium' && score == 75) {
+        } else if (difficulty == 'medium' && score == 80) {
             wingame(score, (999 - gametimerValue));
-        } else if (difficulty == 'hard' && score == 145) {
+        } else if (difficulty == 'hard' && score == 165) {
             wingame(score, (999 - gametimerValue));
-        } else if (difficulty == 'rufino' && score == 900) {
+        } else if (difficulty == 'rufino' && score == 1100) {
             wingame(score, (9999 - gametimerValue));
         }
     }
