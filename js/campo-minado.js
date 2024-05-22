@@ -95,14 +95,14 @@ function montaTabela (difficulty) {
     } else if (difficulty == 'medium') {
         size =10;
         numbershowsize = 3;
-        bombs = espalhaBombas(25, 100);
+        bombs = espalhaBombas(20, 100);
     } else if (difficulty == 'hard') {
         size = 15;
-        bombs = espalhaBombas(80, 225);
+        bombs = espalhaBombas(60, 225);
     } else if (difficulty == 'rufino') {
         size = 40;
         numbershowsize = 3;
-        bombs = espalhaBombas(700, 1600);
+        bombs = espalhaBombas(500, 1600);
         num = '0000';
         numbershowsize = 4;
         minwid = '69px';
