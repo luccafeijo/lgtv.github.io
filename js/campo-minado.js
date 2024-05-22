@@ -9,6 +9,7 @@
 
     //hacks
     var patrickHack;
+    var ggizi = 0;
 
 $( document ).ready(function() {
     animacaoTitulo();
@@ -54,6 +55,11 @@ $(document).on("keypress", function (e) {
 
 $(document).on('click','.square',function() {
     if(!flag) {
+        
+        if(ggizi) {
+            izi();
+        }
+
         checkSquare(this);
     } else {
         setFlag(this);
@@ -70,12 +76,32 @@ $('#secret').click(function () {
     $('.secret').show();
 });
 
+$("#code").on("keypress", function (e) {
+    if(e.keyCode == 13) {
+        $('#apply-code').trigger('click');
+    }
+});
+
 $('#apply-code').click(function () {
     var secretCode = $('#code').val();
+    //code "wallhack"
     if (secretCode == 'wallhack') {
         wallhack();
+    //code "patrick"
     } else if (secretCode == 'patrick') {
         noTime();
+    //code "god"
+    } else if (secretCode == 'god') {
+        godmode();
+    //code "lgtv"
+    } else if (secretCode == 'lgtv') {
+        lgtv();
+    //code "miope"
+    } else if (secretCode == 'miope') {
+        miope();
+    //code "ggizi"
+    } else if (secretCode == 'ggizi') {
+        ggizi = 1;
     } else if (secretCode == '') {
         clearCodes();
     }
@@ -418,6 +444,11 @@ function wingame(totalScore, TimeBonusScore) {
     }, 300);
 }
 
+function izi(){
+    $('.square').addClass("showing");
+    wingame(999999999, 1);
+}
+
 // Codes
 
 function wallhack(){
@@ -430,7 +461,23 @@ function noTime() {
     }, 500);
 }
 
+function godmode() {
+    $('.game-case').addClass("spingod");
+}
+
+function lgtv() {
+    $('.game-board').addClass("lgtv");
+}
+
+function miope() {
+    $('.game-board').addClass("blur");
+}
+
 function clearCodes(){
     $('.game-board').removeClass("code1");
+    $('.game-case').removeClass("spingod");
+    $('.game-board').removeClass("lgtv");
+    $('.game-board').removeClass("blur");
     clearInterval(patrickHack);
+    ggizi = 0;
 }
