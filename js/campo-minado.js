@@ -7,6 +7,9 @@
     var numbershowsize = 3;
     var flag = 0;
 
+    //hacks
+    var patrickHack;
+
 $( document ).ready(function() {
     animacaoTitulo();
 });
@@ -71,6 +74,8 @@ $('#apply-code').click(function () {
     var secretCode = $('#code').val();
     if (secretCode == 'wallhack') {
         wallhack();
+    } else if (secretCode == 'patrick') {
+        noTime();
     } else if (secretCode == '') {
         clearCodes();
     }
@@ -419,6 +424,13 @@ function wallhack(){
     $('.game-board').addClass("code1");
 }
 
+function noTime() {
+    patrickHack = setInterval(function() {
+        clearInterval(gametimer);
+    }, 500);
+}
+
 function clearCodes(){
     $('.game-board').removeClass("code1");
+    clearInterval(patrickHack);
 }
