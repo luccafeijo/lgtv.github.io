@@ -3,7 +3,7 @@
 @media only screen and (min-width: 768px) {
     /* For desktop: */
         body {
-            background-image: url("../sources/images/life-web-new.png");
+            background-image: url("../sources/images/baby/life-web-new.png");
             background-size: 1400px;
             background-position: top;
             background-repeat: no-repeat;
@@ -37,7 +37,7 @@
 /* For mobile phones/tablets: */
 @media only screen and (max-width: 767px) {
     body {
-        background-image: url("../sources/images/life-mobile.png");
+        background-image: url("../sources/images/baby/life-mobile.png");
         background-size: 767px;
         background-position: top;
         background-repeat: no-repeat;

@@ -2,12 +2,19 @@
     /* text-align: center; */
 }
 
+body {
+    background-color: #192841 !important;
+    overflow-x: hidden;
+}
+
 a {
     margin: auto;
     cursor: pointer;
 }
 
 h4 {
+    margin-top: 20px !important;
+    color: #FFF !important;
     text-align: center;
 }
 
