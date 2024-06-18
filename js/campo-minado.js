@@ -82,6 +82,11 @@ $('.close-secret').click(function () {
     $('.secret').hide();
 });
 
+$('.show-list').click(function () {
+    console.log("teste");
+    $('.secret-list').toggle();
+});
+
 $("#code").on("keypress", function (e) {
     if(e.keyCode == 13) {
         $('#apply-code').trigger('click');
