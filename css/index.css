@@ -1,5 +1,5 @@
 .align-middle {
-    /* text-align: center; */
+    text-align: center;
 }
 
 body {
@@ -19,6 +19,7 @@ h4 {
 }
 
 .game-btn {
+    width: 100% !important;
     background-color: #3f4655;
     width: fit-content;
     cursor: pointer;
