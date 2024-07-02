@@ -1,6 +1,7 @@
 $( document ).ready(function() {
     randomTextCampoMinado();
     randomTextFortnite2();
+    randomTextFNF();
 });
 
 function randomTextCampoMinado() {
@@ -43,6 +44,30 @@ function randomTextFortnite2() {
           break;
       case 5:
           $('.fortnite2game').html("Submit your speedrun!");
+        break;
+      default:
+        // code block
+    }
+}
+
+
+function randomTextFNF() {
+  var randomNumber = Math.floor(Math.random() * 6);
+  switch(randomNumber) {
+      case 1:
+          $('.fnfgame').html("Se ela dança, eu danço");
+        break;
+      case 2:
+          $('.fnfgame').html("SOLTA O SOM CHICO");
+        break;
+      case 3:
+          $('.fnfgame').html("/dance");
+        break;
+      case 4:
+          $('.fnfgame').html("linkpark.mp3");
+          break;
+      case 5:
+          $('.fnfgame').html("The new Eminem");
         break;
       default:
         // code block
