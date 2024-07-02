@@ -1,75 +1,43 @@
 $( document ).ready(function() {
-    randomTextCampoMinado();
-    randomTextFortnite2();
-    randomTextFNF();
+    randomText('minesweepergame');
+    randomText('fortnite2game');
+    randomText('fnfgame');
+    randomText('marioVgame');
 });
 
-function randomTextCampoMinado() {
-    var randomNumber = Math.floor(Math.random() * 6);
-    switch(randomNumber) {
-        case 1:
-            $('.minesweepergame').html("V 1.0!");
-          break;
-        case 2:
-            $('.minesweepergame').html("Isso não é uma cópia de Minecraft");
-          break;
-        case 3:
-            $('.minesweepergame').html("Bomba bomba, olha a bomba!");
-          break;
-        case 4:
-            $('.minesweepergame').html("GOTY");
-            break;
-        case 5:
-            $('.minesweepergame').html("Ouvi dizer que tem cheats...");
-          break;
-        default:
-          // code block
-      }
-}
-
-function randomTextFortnite2() {
-  var randomNumber = Math.floor(Math.random() * 6);
-  switch(randomNumber) {
-      case 1:
-          $('.fortnite2game').html("We got a number one Victory Royale");
-        break;
-      case 2:
-          $('.fortnite2game').html("Hurr Hurr-Hur-Hurr Hurr Hurr-Hur-Hurr Hur-Hurr");
-        break;
-      case 3:
-          $('.fortnite2game').html("SAAAANSSSSS!");
-        break;
-      case 4:
-          $('.fortnite2game').html("Best Game Ever Made");
-          break;
-      case 5:
-          $('.fortnite2game').html("Submit your speedrun!");
-        break;
-      default:
-        // code block
-    }
-}
+const gametexts = {
+  minesweepergame: [
+    'V 1.0!',
+    'Isso não é uma cópia de Minecraft',
+    'Bomba bomba, olha a bomba!',
+    'GOTY',
+    'Ouvi dizer que tem cheats...'
+  ],
+  fortnite2game: [
+    'by qubsonxd',
+    'We got a number one Victory Royale',
+    'Hurr Hurr-Hur-Hurr Hurr Hurr-Hur-Hurr Hur-Hurr',
+    'SAAAANSSSSS!',
+    'Best Game Ever Made',
+    'Submit your speedrun!'
+  ],
+  fnfgame: [
+    'Ready, set, GO',
+    'Se ela dança, eu danço',
+    'SOLTA O SOM CHICO',
+    '/dance',
+    'linkpark.mp3!',
+    'The new Eminem'
+  ],
+  marioVgame: [
+    "It's a me, MARIO",
+    'Mamamia',
+    'Ya hooo'
+  ]
+};
 
 
-function randomTextFNF() {
-  var randomNumber = Math.floor(Math.random() * 6);
-  switch(randomNumber) {
-      case 1:
-          $('.fnfgame').html("Se ela dança, eu danço");
-        break;
-      case 2:
-          $('.fnfgame').html("SOLTA O SOM CHICO");
-        break;
-      case 3:
-          $('.fnfgame').html("/dance");
-        break;
-      case 4:
-          $('.fnfgame').html("linkpark.mp3");
-          break;
-      case 5:
-          $('.fnfgame').html("The new Eminem");
-        break;
-      default:
-        // code block
-    }
+function randomText(btnclass) {
+    var randomNumber = Math.floor(Math.random() * gametexts[btnclass].length);
+    $('.'+btnclass).html(gametexts[btnclass][randomNumber]);
 }
