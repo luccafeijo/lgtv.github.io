@@ -27,7 +27,7 @@ function cacheImages(){
     'paulin_still.png',
     'paulin_work.png',
     'paulin_look.png',
-    'paulin_bgclean.png',
+    'paulin_bg.png',
   ];
 
   preloads.forEach(function(element){
