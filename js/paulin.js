@@ -1,7 +1,7 @@
 $( document ).ready(function() {
 
   cacheImages();
-  
+
   action = setInterval(function() {
       $('#character').removeClass("work");
       $('#character').removeClass("still");
@@ -26,13 +26,12 @@ function cacheImages(){
   preloads = [
     'paulin_still.png',
     'paulin_work.png',
-    'paulin_look.png'
+    'paulin_look.png',
+    'paulin_bgclean.png',
   ];
 
-  var tempImg = []
-
-  for(var x=0;x<preloads.length;x++) {
-      tempImg[x] = new Image()
-      tempImg[x].src = '../sources/images/paulinpim-game/'.preloads[x]
-  }
+  preloads.forEach(function(element){
+    var tempImg = new Image()
+    tempImg.src = '../sources/images/paulinpim-game/'+element;
+  });
 }
