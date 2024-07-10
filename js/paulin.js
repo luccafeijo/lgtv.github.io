@@ -1,25 +1,38 @@
+var working;
+
 $( document ).ready(function() {
 
   cacheImages();
 
-  action = setInterval(function() {
+  // action = setInterval(function() {
+  //     $('#character').removeClass("work");
+  //     $('#character').removeClass("still");
+  //     $('#character').removeClass("look");
+      
+  //     var randomNumber = Math.floor(Math.random() * 3);
+      
+  //     switch(randomNumber) {
+  //         case 1:
+  //             $('#character').addClass("work");
+  //           break;
+  //         case 2:
+  //             $('#character').addClass("look");
+  //           break;
+  //         default:
+  //             $('#character').addClass("still");
+  //       }
+  // }, 1000);
+
+  $('#main-action').on('click', function(){
+    clearInterval(working);
+    $('#character').removeClass("still");
+    $('#character').addClass("work");
+
+    working = setInterval(function() {
       $('#character').removeClass("work");
-      $('#character').removeClass("still");
-      $('#character').removeClass("look");
-      
-      var randomNumber = Math.floor(Math.random() * 3);
-      
-      switch(randomNumber) {
-          case 1:
-              $('#character').addClass("work");
-            break;
-          case 2:
-              $('#character').addClass("look");
-            break;
-          default:
-              $('#character').addClass("still");
-        }
-  }, 1000);
+      $('#character').addClass("still");
+    }, 400);
+  });
 });
 
 function cacheImages(){
