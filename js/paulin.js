@@ -1,4 +1,8 @@
+//interval animacao
 var working;
+
+//dinheiro no jogo
+var money = 0;
 
 $( document ).ready(function() {
 
@@ -27,6 +31,7 @@ $( document ).ready(function() {
     clearInterval(working);
     $('#character').removeClass("still");
     $('#character').addClass("work");
+    addMoney();
 
     working = setInterval(function() {
       $('#character').removeClass("work");
@@ -34,6 +39,12 @@ $( document ).ready(function() {
     }, 400);
   });
 });
+
+function addMoney(){
+  money += 1;
+  console.log(money);
+  $('#money').html(money);
+}
 
 function cacheImages(){
   preloads = [

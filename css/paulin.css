@@ -101,6 +101,27 @@
     outline: none;
 }
 
+.overlay {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    margin: 5px;
+}
+
+.overlay .status img {
+    display: inline-block;
+    width: 30px;
+}
+
+.overlay .status p {
+    display: inline-block;
+    color: #FFF;
+    font-size: 28px;
+    vertical-align: middle;
+    margin: auto 5px;
+}
+
 /* Animações */
 .work {
     width: 256px;
