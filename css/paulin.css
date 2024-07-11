@@ -15,14 +15,9 @@
     color: #FFF;
     border: none;
     border-radius: 8px;
-    background-color: #ff0066;
-    padding: 4px 10px;
-}
-
-#game-actions button {
-    position: relative;
-    border: none;
+    /* background-color: #ff0066; */
     background: transparent;
+    position: relative;
     padding: 0;
     cursor: pointer;
     outline-offset: 4px;
@@ -31,7 +26,7 @@
     touch-action: manipulation;
 }
 
-#game-actions .shadow {
+#game-actions button .shadow {
     position: absolute;
     top: 0;
     left: 0;
@@ -44,7 +39,7 @@
     transition: transform 600ms cubic-bezier(.3, .7, .4, 1);
 }
 
-#game-actions .edge {
+#game-actions button.main-action .edge {
     position: absolute;
     top: 0;
     left: 0;
@@ -60,7 +55,7 @@
     );
 }
 
-#game-actions .front {
+#game-actions button.main-action .front {
     display: block;
     position: relative;
     padding: 12px 27px;
@@ -68,6 +63,35 @@
     font-size: 1.1rem;
     color: white;
     background: hsl(345deg 100% 47%);
+    will-change: transform;
+    transform: translateY(-4px);
+    transition: transform 600ms cubic-bezier(.3, .7, .4, 1);
+}
+
+#game-actions button.secondary-action .edge {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    background: linear-gradient(
+        to left,
+        hsl(231deg 100% 16%) 0%,
+        hsl(231deg 100% 32%) 8%,
+        hsl(231deg, 100%, 32%) 92%,
+        hsl(231deg 100% 16%) 100%
+    );
+}
+
+#game-actions button.secondary-action .front {
+    display: block;
+    position: relative;
+    padding: 12px 27px;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    color: white;
+    background: hsl(231, 100%, 47%);
     will-change: transform;
     transform: translateY(-4px);
     transition: transform 600ms cubic-bezier(.3, .7, .4, 1);
