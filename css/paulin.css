@@ -126,10 +126,10 @@
 }
 
 .overlay {
-    position: fixed;
+    position: absolute;
     z-index: 1;
     left: 0;
-    top: 0;
+    top: 60px;
     margin: 5px;
 }
 
