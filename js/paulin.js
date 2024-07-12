@@ -8,7 +8,7 @@ var passiveMoney = 0;
 
 //upgrades secundarios
 var vscode = 0;
-var vscodeCustoInicial = 20;
+var vscodeCustoAtual = 20;
 var vscodeCustoAdicional = 20;
 
 var spotify = 0;
@@ -48,8 +48,16 @@ $( document ).ready(function() {
           passiveMoney = Math.round(passiveMoney * 10) / 10;
         }
         break;
-      case 'vs_code':
-        clickValue = clickValue * 2;
+      case 'vscode':
+        if(money >= vscodeCustoAtual && vscode < 10) {
+          money -= vscodeCustoAtual;
+          exibeMoney();
+          vscodeCustoAtual += vscodeCustoAdicional;
+          vscode++;
+          $('.'+this.id+'-progress').html(vscode+'/10');
+          $('.'+this.id+'-value').html(vscodeCustoAtual + ' Paulocoins');
+          clickValue = clickValue + 1;
+        }
         break;
       default:
         // code block
