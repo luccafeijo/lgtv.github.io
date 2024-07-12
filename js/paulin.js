@@ -35,8 +35,6 @@ $( document ).ready(function() {
   $('.secondary-action').on('click', function(){
     switch(this.id) {
       case 'spotify':
-        // console.log(money);
-        // console.log(spotifyCustoAtual);
         if(money >= spotifyCustoAtual && spotify < 10) {
           money -= spotifyCustoAtual;
           exibeMoney();
@@ -46,9 +44,8 @@ $( document ).ready(function() {
           $('.'+this.id+'-value').html(spotifyCustoAtual + ' Paulocoins');
           passiveMoney += 0.1;
 
-          //TODO
-          // ta bugado, o passive money, ao acressentar 0.1 de valor, as vezes fica com o número quebrado, tipo "0.30000000000000004" (exemplo real)
-          // console.log(passiveMoney);
+          //corrige imprecisao de valores float
+          passiveMoney = Math.round(passiveMoney * 10) / 10;
         }
         break;
       case 'vs_code':
