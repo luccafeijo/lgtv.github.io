@@ -1,5 +1,6 @@
 $( document ).ready(function() {
     randomText('minesweepergame');
+    randomText('paulingame');
     randomText('fortnite2game');
     randomText('fnfgame');
     randomText('marioVgame');
@@ -12,6 +13,10 @@ const gametexts = {
     'Bomba bomba, olha a bomba!',
     'GOTY',
     'Ouvi dizer que tem cheats...'
+  ],
+  paulingame:[
+    'Alguém tem que trabaia né',
+    'Puta que pariu em carai'
   ],
   fortnite2game: [
     'by qubsonxd',
