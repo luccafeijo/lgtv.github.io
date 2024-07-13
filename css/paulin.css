@@ -147,6 +147,14 @@
 }
 
 /* Animações */
+.still {
+    width: 256px;
+    height: 256px;
+    background: url('../sources/images/paulinpim-game/paulin_still.png') 0px 0px;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+}
+
 .work {
     width: 256px;
     height: 256px;
@@ -156,12 +164,21 @@
     animation: working 0.3s steps(2) infinite;
 }
 
-.still {
+.still_spotify {
     width: 256px;
     height: 256px;
-    background: url('../sources/images/paulinpim-game/paulin_still.png') 0px 0px;
+    background: url('../sources/images/paulinpim-game/paulin_still_spotify.png') 0px 0px;
     image-rendering: pixelated;
     image-rendering: crisp-edges;
+}
+
+.work_spotify {
+    width: 256px;
+    height: 256px;
+    background: url('../sources/images/paulinpim-game/paulin_work_spotify.png') 0px 0px;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+    animation: working_spotify 2.0s steps(6) infinite;
 }
 
 .look {
@@ -176,6 +193,11 @@
 @keyframes working {
     from { background-position: 0px; }
     to { background-position: -512px; }
+}
+
+@keyframes working_spotify {
+    from { background-position: 0px; }
+    to { background-position: -1536px; }
 }
 
 @keyframes looking {

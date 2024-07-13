@@ -5,27 +5,30 @@ var working;
 var money = 0;
 var clickValue = 1;
 var passiveMoney = 0;
+var headset = 0;
 
 $( document ).ready(function() {
   cacheImages();
   attPassiveMoney();
 
   $('.main-action').on('click', function(){
-    clearInterval(working);
-    $('#character').removeClass("still");
-    $('#character').addClass("work");
-    addMoney(clickValue);
-
-    working = setTimeout(function() {
-      $('#character').removeClass("work");
-      $('#character').addClass("still");
-    }, 400);
+	
+	addMoney(clickValue);
+	if(!headset) {
+		workAnimation();
+	} else {
+		musicWorkAnimation();
+	}
+    
   });
 
   $('.secondary-action').on('click', function(){
     switch(this.id) {
       case 'spotify':
         spotifyAction();
+        if(spotify == 1){
+			enableHeadset();
+        }
         break;
       case 'vscode':
         vscodeAction();
@@ -53,6 +56,34 @@ function attPassiveMoney(){
     passiveMoney = Math.round(passiveMoney * 10) / 10;
     addMoney(passiveMoney);
   }, 1000);
+}
+
+function enableHeadset(){
+	headset = 1;
+	$('#character').removeClass("still");
+    $('#character').addClass("still_spotify");
+}
+
+function workAnimation(){
+	clearInterval(working);
+    $('#character').removeClass("still");
+    $('#character').addClass("work");
+
+    working = setTimeout(function() {
+      $('#character').removeClass("work");
+      $('#character').addClass("still");
+    }, 400);
+}
+
+function musicWorkAnimation(){
+	clearInterval(working);
+    $('#character').removeClass("still_spotify");
+    $('#character').addClass("work_spotify");
+
+    working = setTimeout(function() {
+      $('#character').removeClass("work_spotify");
+      $('#character').addClass("still_spotify");
+    }, 400);
 }
 
 function cacheImages(){
