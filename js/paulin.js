@@ -92,6 +92,8 @@ function cacheImages(){
   preloads = [
     'paulin_still.png',
     'paulin_work.png',
+	'paulin_still_spotify.png',
+    'paulin_work_spotify.png',
     'paulin_look.png',
     'paulin_bg.png',
   ];
