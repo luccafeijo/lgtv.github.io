@@ -24,17 +24,20 @@ $( document ).ready(function() {
 
   $('.secondary-action').on('click', function(){
     switch(this.id) {
-      case 'spotify':
-        spotifyAction();
-        if(spotify == 1){
-			enableHeadset();
-        }
-        break;
-      case 'vscode':
-        vscodeAction();
-        break;
-      default:
-        // code block
+    	case 'spotify':
+			spotifyAction();
+			if(spotify == 1){
+				enableHeadset();
+			}
+			break;
+      	case 'vscode':
+			vscodeAction();
+			break;
+		case 'youtube':
+			youtubeAction();
+			break;
+      	default:
+        	// code block
     }
     console.log(this.id);
   });

@@ -9,7 +9,12 @@ window.spotifyAction = function (){
         window.spotifyCustoAtual += window.spotifyCustoAdicional;
         window.spotify++;
         $('.spotify-progress').html(window.spotify+'/10');
-        $('.spotify-value').html(window.spotifyCustoAtual + ' Paulocoins');
+        if(window.spotify == 10) {
+            $('.spotify-value').html('Maximo atingido');
+        } else {
+            $('.spotify-value').html(window.spotifyCustoAtual + ' Paulocoins');
+
+        }
         passiveMoney += 0.1;
     }
 }

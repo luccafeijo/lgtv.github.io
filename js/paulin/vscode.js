@@ -9,7 +9,13 @@ window.vscodeAction = function (){
         window.vscodeCustoAtual += window.vscodeCustoAdicional;
         window.vscode++;
         $('.vscode-progress').html(window.vscode+'/10');
-        $('.vscode-value').html(window.vscodeCustoAtual + ' Paulocoins');
+
+        if(window.vscode == 10) {
+            $('.vscode-value').html('Maximo atingido');
+        } else {
+            $('.vscode-value').html(window.vscodeCustoAtual + ' Paulocoins');
+        }
+
         clickValue = clickValue + 1;
     }
 }
