@@ -8,7 +8,8 @@ window.spotifyAction = function (){
         exibeMoney();
         window.spotifyCustoAtual += window.spotifyCustoAdicional;
         window.spotify++;
-        $('.spotify-progress').html(window.spotify+'/10');
+        $('.spotify-progress-info').html(window.spotify+'/10');
+        $('.spotify-progress')[0].style.width = window.spotify+"0%";
         if(window.spotify == 10) {
             $('.spotify-value').html('Maximo atingido');
         } else {

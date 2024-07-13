@@ -8,7 +8,8 @@ window.vscodeAction = function (){
         exibeMoney();
         window.vscodeCustoAtual += window.vscodeCustoAdicional;
         window.vscode++;
-        $('.vscode-progress').html(window.vscode+'/10');
+        $('.vscode-progress-info').html(window.vscode+'/10');
+        $('.vscode-progress')[0].style.width = window.vscode+"0%";
 
         if(window.vscode == 10) {
             $('.vscode-value').html('Maximo atingido');

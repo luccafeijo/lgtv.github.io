@@ -39,7 +39,6 @@ $( document ).ready(function() {
       	default:
         	// code block
     }
-    console.log(this.id);
   });
 });
 
