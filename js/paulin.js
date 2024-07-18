@@ -5,11 +5,13 @@ var working;
 var money = 0;
 var clickValue = 1;
 var passiveMoney = 0;
+var autoWork = 0;
 var headset = 0;
 
 $( document ).ready(function() {
   cacheImages();
   attPassiveMoney();
+  attAutoWork();
 
   $('.main-action').on('click', function(){
 	
@@ -25,19 +27,22 @@ $( document ).ready(function() {
   $('.secondary-action').on('click', function(){
     switch(this.id) {
     	case 'spotify':
-			spotifyAction();
-			if(spotify == 1){
-				enableHeadset();
-			}
-			break;
-      	case 'vscode':
-			vscodeAction();
-			break;
-		case 'youtube':
-			youtubeAction();
-			break;
-      	default:
-        	// code block
+        spotifyAction();
+        if(spotify == 1){
+          enableHeadset();
+        }
+        break;
+      case 'vscode':
+        vscodeAction();
+        break;
+      case 'youtube':
+        youtubeAction();
+        break;
+      case 'chatgpt':
+        chatgptAction();
+        break;
+      default:
+        // code block
     }
   });
 });
@@ -58,6 +63,14 @@ function attPassiveMoney(){
     passiveMoney = Math.round(passiveMoney * 10) / 10;
     addMoney(passiveMoney);
   }, 1000);
+}
+
+function attAutoWork(){
+  setInterval(function() {
+    if(autoWork) {
+      addMoney(clickValue*autoWork);
+    }
+  }, 5000);
 }
 
 function enableHeadset(){
