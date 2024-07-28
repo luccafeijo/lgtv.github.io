@@ -14,19 +14,23 @@
         <div id="menu"></div>
     </head>
     <body>
-        <div id="main-menu" class="hide">
-            <h2>Paulinpim Simulator</h2>
-            <button>Iniciar jogo</button>
+        <div id="main-menu" class="">
+            <h1>Paulinpim Simulator</h1>
+            <div class="menu-actions">
+                <button id="iniciar-jogo">Iniciar jogo</button>
+                <button id="password">Password</button>
+            </div>
         </div>
         <div id="scenary">
-            <div id="character" class="still"></div>
+            <div id="character" class="still hide"></div>
         </div>
-        <div class="overlay">
+        <div class="overlay hide">
             <div class="status">
                 <img src="../sources/images/paulinpim-game/Paulocoin.png"><p id="money">0,00</p>
             </div>
+            <div id="timer">00:00:00</div>
         </div>
-        <div id="game-actions" class="">
+        <div id="game-actions" class="hide">
             <div class="row">
                 <div class="col-md-12 align_center">
                     <button class="main-action">

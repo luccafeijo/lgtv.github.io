@@ -1,3 +1,5 @@
+@font-face { font-family: 'Seven Segment'; src: url('../sources/fonts/Seven_Segment.ttf'); }
+
 .align_center {
     text-align: center;
 }
@@ -12,6 +14,32 @@
     background: url('../sources/images/paulinpim-game/game-menu.png');
     background-repeat: no-repeat;
     background-color: #2b2a3f;
+}
+
+#main-menu h1 {
+    text-align: center;
+    color: #FFF;
+    font-family: 'Bebas Neue';
+}
+
+#main-menu .menu-actions {
+    width: 30%;
+    float: right;
+    padding-top: 100px;
+}
+
+#main-menu .menu-actions button {
+    width: 80%;
+    display: inline;
+    color: #FFF;
+}
+
+#main-menu .menu-actions button#iniciar-jogo {
+    background-color: rgb(51, 163, 51);
+}
+
+#main-menu .menu-actions button#password {
+    background-color: rgb(190, 183, 85);
 }
 
 #scenary {
@@ -168,10 +196,15 @@
 
 .overlay {
     position: absolute;
+    width: -webkit-fill-available;
     z-index: 1;
     left: 0;
     top: 60px;
     margin: 5px;
+}
+
+.overlay .status {
+    display: inline;
 }
 
 .overlay .status img {
@@ -185,6 +218,15 @@
     font-size: 28px;
     vertical-align: middle;
     margin: auto 5px;
+}
+
+#timer {
+    color: #FFF;
+    display: none;
+    /* display: inline-flex; */
+    font-size: 30px;
+    float: right;
+    font-family: 'Seven Segment';
 }
 
 /* Animações */
