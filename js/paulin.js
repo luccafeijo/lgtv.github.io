@@ -159,7 +159,10 @@ function iniciaTimer() {
 		formattedSeconds = timer_seconds < 10 ? `0${timer_seconds}` : timer_seconds;
 		formattedMilliseconds = Math.floor(timer_milliseconds / 10).toString().padStart(2, '0');
 
-		$('#timer').html(`${formattedMinutes}:${formattedSeconds}:${formattedMilliseconds}`);
+
+		$('#timer_minutes').html(`${formattedMinutes}`);
+		$('#timer_seconds').html(`${formattedSeconds}`);
+		$('#timer_ms').html(`${formattedMilliseconds}`);
 	}, 10);
 }
 
