@@ -18,6 +18,7 @@
             <h1>Paulinpim Simulator</h1>
             <div class="menu-actions">
                 <button id="iniciar-jogo">Iniciar jogo</button>
+                <button id="iniciar-speedrun">Speedrun Mode</button>
                 <button id="password">Password</button>
             </div>
         </div>
@@ -28,7 +29,7 @@
             <div class="status">
                 <img src="../sources/images/paulinpim-game/Paulocoin.png"><p id="money">0,00</p>
             </div>
-            <div id="timer">00:00:00</div>
+            <div id="timer" class="hide">00:00:00</div>
         </div>
         <div id="game-actions" class="hide">
             <div class="row">
@@ -127,11 +128,40 @@
                     </div>
                 </div>
             </div>
+            <div id="speedrun-upgrade" class="row hide">
+                <div class="offset-md-5 col-md-2 align_center">
+                    <div class="card">
+                        <div class="upgrade-value">
+                            <p class="acai-value value">10000 Paulocoins</p>
+
+                            <p class="acai-progress-info progress-info">0/1</p>
+                            <div class="progress">
+                                <div class="acai-progress progress-bar"></div>
+                            </div>
+
+                        </div>
+                        <button class="unique-action blocked" id="acai">
+                            <span class="shadow"></span>
+                            <span class="edge"></span>
+                            <span class="front text">Açaí</span>
+                        </button>
+                        <div class="upgrade-description">
+                            <p>Fim da Speedrun</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 align_center">
+                    
+                </div>
+            </div>
         </div>
         <script src="../js/paulin/spotify.js"></script>
         <script src="../js/paulin/vscode.js"></script>
         <script src="../js/paulin/youtube.js"></script>
         <script src="../js/paulin/chatgpt.js"></script>
+        <script src="../js/paulin/acai.js"></script>
         <script src="../js/paulin.js"></script>
     </body>
 </html>

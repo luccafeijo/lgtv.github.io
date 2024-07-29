@@ -32,14 +32,23 @@
     width: 80%;
     display: inline;
     color: #FFF;
+    border: 1px solid;
+    border-color: black;
+    border-radius: 100px 0px 0px 30px;
+    margin-bottom: 2px;
 }
 
 #main-menu .menu-actions button#iniciar-jogo {
     background-color: rgb(51, 163, 51);
 }
 
-#main-menu .menu-actions button#password {
+#main-menu .menu-actions button#iniciar-speedrun {
     background-color: rgb(190, 183, 85);
+}
+
+#main-menu .menu-actions button#password {
+    background-color: rgb(50, 83, 148);
+    text-decoration: line-through;
 }
 
 #scenary {
@@ -131,6 +140,49 @@
         hsl(231deg 100% 16%) 100%
     );
 }
+
+#game-actions button.secondary-action .front {
+    display: block;
+    position: relative;
+    padding: 12px 27px;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    color: white;
+    background: hsl(231, 100%, 47%);
+    will-change: transform;
+    transform: translateY(-4px);
+    transition: transform 600ms cubic-bezier(.3, .7, .4, 1);
+}
+
+#game-actions button.unique-action .edge {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    background: linear-gradient(
+        to left,
+        hsl(44deg, 100%, 32%) 8%,
+        hsl(44deg 100% 16%) 0%,
+        hsl(44deg, 100%, 32%) 92%,
+        hsl(44deg 100% 16%) 100%
+    );
+}
+
+#game-actions button.unique-action .front {
+    display: block;
+    position: relative;
+    padding: 12px 27px;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    color: white;
+    background: hsl(44deg, 100%, 47%);
+    will-change: transform;
+    transform: translateY(-4px);
+    transition: transform 600ms cubic-bezier(.3, .7, .4, 1);
+}
+
 #game-actions .upgrade-value {
     text-align: center;
 }
@@ -151,19 +203,6 @@
 #game-actions .upgrade-description p {
     font-size: small;
     color: dimgrey;
-}
-
-#game-actions button.secondary-action .front {
-    display: block;
-    position: relative;
-    padding: 12px 27px;
-    border-radius: 12px;
-    font-size: 1.1rem;
-    color: white;
-    background: hsl(231, 100%, 47%);
-    will-change: transform;
-    transform: translateY(-4px);
-    transition: transform 600ms cubic-bezier(.3, .7, .4, 1);
 }
 
 #game-actions button:hover {
@@ -222,8 +261,7 @@
 
 #timer {
     color: #FFF;
-    display: none;
-    /* display: inline-flex; */
+    display: inline-flex;
     font-size: 30px;
     float: right;
     font-family: 'Seven Segment';

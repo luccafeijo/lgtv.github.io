@@ -9,9 +9,13 @@ var autoWork = 0;
 var headset = 0;
 
 //timer speedrun
+var timer;
 let timer_minutes = 0;
+var formattedMinutes;
 let timer_seconds = 0;
+var formattedSeconds;
 let timer_milliseconds = 0;
+var formattedMilliseconds;
 
 $(document).ready(function () {
 	cacheImages();
@@ -23,8 +27,21 @@ $(document).ready(function () {
 		$('#character').removeClass("hide");
 		$('.overlay').removeClass("hide");
 		$('#game-actions').removeClass("hide");
+	});
+
+	$('#iniciar-speedrun').on('click', function () {
+		$('#main-menu').addClass("hide");
+		$('#character').removeClass("hide");
+		$('.overlay').removeClass("hide");
+		$('#game-actions').removeClass("hide");
+		$('#speedrun-upgrade').removeClass("hide");
+		$('#timer').removeClass("hide");
 
 		iniciaTimer();
+	});
+
+	$('#password').on('click', function () {
+		alert("Ainda não foi implementado mané, por isso está riscado");
 	});
 
 	$('.main-action').on('click', function () {
@@ -52,6 +69,16 @@ $(document).ready(function () {
 				break;
 			case 'chatgpt':
 				chatgptAction();
+				break;
+			default:
+			// code block
+		}
+	});
+
+	$('.unique-action').on('click', function () {
+		switch (this.id) {
+			case 'acai':
+				acaiAction();
 				break;
 			default:
 			// code block
@@ -114,7 +141,7 @@ function musicWorkAnimation() {
 }
 
 function iniciaTimer() {
-	setInterval(function () {
+	timer = setInterval(function () {
 		timer_milliseconds += 10;
 
 		if (timer_milliseconds >= 1000) {
@@ -127,9 +154,9 @@ function iniciaTimer() {
 			timer_minutes++;
 		}
 
-		const formattedMinutes = timer_minutes < 10 ? `0${timer_minutes}` : timer_minutes;
-		const formattedSeconds = timer_seconds < 10 ? `0${timer_seconds}` : timer_seconds;
-		const formattedMilliseconds = Math.floor(timer_milliseconds / 10).toString().padStart(2, '0');
+		formattedMinutes = timer_minutes < 10 ? `0${timer_minutes}` : timer_minutes;
+		formattedSeconds = timer_seconds < 10 ? `0${timer_seconds}` : timer_seconds;
+		formattedMilliseconds = Math.floor(timer_milliseconds / 10).toString().padStart(2, '0');
 
 		$('#timer').html(`${formattedMinutes}:${formattedSeconds}:${formattedMilliseconds}`);
 	}, 10);
