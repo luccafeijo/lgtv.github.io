@@ -21,6 +21,7 @@ $(document).ready(function () {
 	cacheImages();
 	attPassiveMoney();
 	attAutoWork();
+	EnterClickFix();
 
 	$('#iniciar-jogo').on('click', function () {
 		$('#main-menu').addClass("hide");
@@ -44,7 +45,7 @@ $(document).ready(function () {
 		alert("Ainda não foi implementado mané, por isso está riscado");
 	});
 
-	$('.main-action').on('click', function () {
+	$('#main-action').on('click', function () {
 		addMoney(clickValue);
 		if (!headset) {
 			workAnimation();
@@ -175,5 +176,17 @@ function cacheImages() {
 	preloads.forEach(function (element) {
 		var tempImg = new Image()
 		tempImg.src = '../sources/images/paulinpim-game/' + element;
+	});
+}
+
+function EnterClickFix(){
+	var input = document.getElementById("main-action");
+	input.addEventListener("keypress", function(event) {
+		if (event.key === "Enter") {
+			event.preventDefault();
+			setTimeout(() => {
+                alert("Cabo a farra fih");
+            }, 100);
+		}
 	});
 }

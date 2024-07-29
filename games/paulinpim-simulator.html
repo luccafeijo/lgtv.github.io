@@ -33,8 +33,8 @@
         </div>
         <div id="game-actions" class="hide">
             <div class="row">
-                <div class="col-md-12 align_center">
-                    <button class="main-action">
+                <div class="col-12 col-md-12 align_center">
+                    <button id="main-action" class="main-action">
                         <span class="shadow"></span>
                         <span class="edge"></span>
                         <span class="front text">Trabaiar</span>
@@ -43,16 +43,16 @@
             </div>
             <hr/>
             <div class="row">
-                <div class="col-md-3 align_center">
+                <div class="col-12 col-md-3 coluna-up-1 align_center">
+                    <h5>Upgrades de renda contínua</h5>
+                    <hr/>
                     <div class="card">
                         <div class="upgrade-value">
                             <p class="spotify-value value">10 Paulocoins</p>
-
                             <p class="spotify-progress-info progress-info">0/10</p>
                             <div class="progress">
                                 <div class="spotify-progress progress-bar"></div>
                             </div>
-
                         </div>
                         <button class="secondary-action blocked" id="spotify">
                             <span class="shadow"></span>
@@ -63,12 +63,31 @@
                             <p>Gera 0,1 a cada seg</p>
                         </div>
                     </div>
+                    <hr/>
+                    <div class="card">
+                        <div class="upgrade-value">
+                            <p class="youtube-value value">40 Paulocoins</p>
+                            <p class="youtube-progress-info progress-info">0/10</p>
+                            <div class="progress">
+                                <div class="youtube-progress progress-bar"></div>
+                            </div>
+                        </div>
+                        <button class="secondary-action blocked" id="youtube">
+                            <span class="shadow"></span>
+                            <span class="edge"></span>
+                            <span class="front text">Youtube</span>
+                        </button>
+                        <div class="upgrade-description">
+                            <p>Gera 0,5 a cada seg</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-3 align_center">
+                <div class="col-12 col-md-3  coluna-up-2 align_center">
+                    <h5>Upgrades de valor do click</h5>
+                    <hr/>
                     <div class="card">
                         <div class="upgrade-value">
                             <p class="vscode-value value">20 Paulocoins</p>
-
                             <p class="vscode-progress-info progress-info">0/10</p>
                             <div class="progress">
                                 <div class="vscode-progress progress-bar"></div>
@@ -85,32 +104,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3 align_center">
-                    <div class="card">
-                        <div class="upgrade-value">
-                            <p class="youtube-value value">40 Paulocoins</p>
-
-                            <p class="youtube-progress-info progress-info">0/10</p>
-                            <div class="progress">
-                                <div class="youtube-progress progress-bar"></div>
-                            </div>
-
-                        </div>
-                        <button class="secondary-action blocked" id="youtube">
-                            <span class="shadow"></span>
-                            <span class="edge"></span>
-                            <span class="front text">Youtube</span>
-                        </button>
-                        <div class="upgrade-description">
-                            <p>Gera 0,5 a cada seg</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 align_center">
+                <div class="col-12 col-md-3  coluna-up-3 align_center">
+                    <h5>Upgrades de click automático</h5>
+                    <hr/>
                     <div class="card">
                         <div class="upgrade-value">
                             <p class="chatgpt-value value">200 Paulocoins</p>
-
                             <p class="chatgpt-progress-info progress-info">0/10</p>
                             <div class="progress">
                                 <div class="chatgpt-progress progress-bar"></div>
@@ -127,13 +126,12 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div id="speedrun-upgrade" class="row hide">
-                <div class="offset-md-5 col-md-2 align_center">
-                    <div class="card">
+                <div class="col-12 col-md-3  coluna-up-4 align_center">
+                    <h5>Upgrades Únicos</h5>
+                    <hr/>
+                    <div id="speedrun-upgrade" class="card hide">
                         <div class="upgrade-value">
                             <p class="acai-value value">10000 Paulocoins</p>
-
                             <p class="acai-progress-info progress-info">0/1</p>
                             <div class="progress">
                                 <div class="acai-progress progress-bar"></div>
@@ -149,11 +147,6 @@
                             <p>Fim da Speedrun</p>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-3 align_center">
-                    
                 </div>
             </div>
         </div>

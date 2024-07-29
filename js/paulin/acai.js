@@ -15,7 +15,7 @@ window.acaiAction = function (){
             yay.play();
             setTimeout(() => {
                 alert("Você comprou o Açaí em: " + `${formattedMinutes}:${formattedSeconds}:${formattedMilliseconds}`);
-            }, 100); // Espera 100ms antes de mostrar o alerta
+            }, 100);
         } else {
             $('.acai-value').html(window.acaiCustoAtual + ' Paulocoins');
         }

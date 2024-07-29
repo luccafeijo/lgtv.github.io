@@ -2,6 +2,7 @@
 
 .align_center {
     text-align: center;
+    padding: 0px;
 }
 
 .hide {
@@ -59,6 +60,30 @@
     margin: auto;
 }
 
+#game-actions .coluna-up-1,
+#game-actions .coluna-up-2,
+#game-actions .coluna-up-3,
+#game-actions .coluna-up-4 {
+    border: 3px solid;
+    border-radius: 5px;
+}
+
+#game-actions .coluna-up-1 {
+    border-color: rgba(0, 211, 0, 0.1);
+}
+
+#game-actions .coluna-up-2 {
+    border-color: rgba(132, 0, 255, 0.1);
+}
+
+#game-actions .coluna-up-3 {
+    border-color: rgba(255, 0, 242, 0.1);
+}
+
+#game-actions .coluna-up-4 {
+    border-color: rgba(255, 174, 0, 0.1);
+}
+
 #game-actions .card {
     background-color: unset;
     border: none;
@@ -94,6 +119,10 @@
     will-change: transform;
     transform: translateY(2px);
     transition: transform 600ms cubic-bezier(.3, .7, .4, 1);
+}
+
+#game-actions button.main-action:focus-visible {
+    outline:none;
 }
 
 #game-actions button.main-action .edge {
@@ -197,12 +226,17 @@
 }
 
 #game-actions .upgrade-value .progress-info {
-    margin-bottom: 0px;
+    margin-bottom: -20px;
+}
+
+#game-actions .upgrade-value .progress {
+    margin: 0px 20px;
 }
 
 #game-actions .upgrade-description p {
     font-size: small;
-    color: dimgrey;
+    color: #282828;
+    text-decoration: underline;
 }
 
 #game-actions button:hover {
