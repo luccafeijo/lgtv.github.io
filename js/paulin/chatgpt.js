@@ -1,6 +1,6 @@
 window.chatgpt = 0;
 window.chatgptCustoAtual = 200;
-window.chatgptCustoAdicional = 200;
+window.chatgptCustoAdicional = 50;
 
 window.chatgptAction = function (){
     if(money >= window.chatgptCustoAtual && window.chatgpt < 10) {

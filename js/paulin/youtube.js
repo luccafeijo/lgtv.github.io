@@ -1,6 +1,6 @@
 window.youtube = 0;
 window.youtubeCustoAtual = 40;
-window.youtubeCustoAdicional = 40;
+window.youtubeCustoAdicional = 30;
 
 window.youtubeAction = function (){
     if(money >= window.youtubeCustoAtual && window.youtube < 10) {

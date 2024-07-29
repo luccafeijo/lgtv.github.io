@@ -68,6 +68,9 @@ $(document).ready(function () {
 			case 'youtube':
 				youtubeAction();
 				break;
+			case 'netflix':
+				netflixAction();
+				break;
 			case 'chatgpt':
 				chatgptAction();
 				break;
