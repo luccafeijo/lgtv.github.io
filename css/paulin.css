@@ -100,10 +100,10 @@
 }
 
 #game-actions button {
+    display: block;
     color: #FFF;
     border: none;
     border-radius: 8px;
-    /* background-color: #ff0066; */
     background: transparent;
     position: relative;
     padding: 0;
@@ -114,7 +114,6 @@
     touch-action: manipulation;
 
     width: fit-content;
-    display: inline-block;
     margin: 10px auto auto auto;
 }
 
