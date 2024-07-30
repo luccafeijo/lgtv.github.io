@@ -60,6 +60,11 @@
     margin: auto;
 }
 
+#game-actions div.row {
+    margin: 0px;
+    width: 100%;
+}
+
 #game-actions .coluna-up-1,
 #game-actions .coluna-up-2,
 #game-actions .coluna-up-3,
@@ -91,7 +96,7 @@
 }
 
 #game-actions .card .col-md-6 {
-    display: inline-table;
+    display: table-cell;
 }
 
 #game-actions button {
@@ -281,7 +286,9 @@
 
 .overlay {
     position: absolute;
-    width: -webkit-fill-available;
+    margin:0 !important;
+    padding: 0px 10px;
+    width: 100%;
     z-index: 1;
     left: 0;
     top: 60px;
