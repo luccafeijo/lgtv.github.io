@@ -85,8 +85,13 @@
 }
 
 #game-actions .card {
+    display: inline-table;
     background-color: unset;
     border: none;
+}
+
+#game-actions .card .col-md-6 {
+    display: inline-table;
 }
 
 #game-actions button {
@@ -212,31 +217,32 @@
     transition: transform 600ms cubic-bezier(.3, .7, .4, 1);
 }
 
-#game-actions .upgrade-value {
+#game-actions .upgrade-progress {
     text-align: center;
 }
 
-#game-actions .upgrade-value .value {
+#game-actions .card .value {
     background-color: #fce8a3;
     border: 1px solid #cb9d00;
     width: fit-content;
     display: inline-block;
     padding: 2px 10px;
+    margin-top: 4px;
     border-radius: 4px;
 }
 
-#game-actions .upgrade-value .progress-info {
+#game-actions .upgrade-progress .progress-info {
     position: relative;
     z-index: 2;
     margin-bottom: -20px;
 }
 
-#game-actions .upgrade-value .progress-bar {
+#game-actions .upgrade-progress .progress-bar {
     background-color: #50a5ff;
 }
 
-#game-actions .upgrade-value .progress {
-    margin: 0px 20px;
+#game-actions .upgrade-progress .progress {
+    margin: 0px 0px;
 }
 
 #game-actions .upgrade-description p {
@@ -317,6 +323,7 @@
     margin-top: -20px;
     font-weight: normal;
     font-size: 45px;
+    text-shadow: #000 1px 0 10px;
 }
 
 /* Animações */
