@@ -1,5 +1,5 @@
 window.chatgpt = 0;
-window.chatgptCustoAtual = 200;
+window.chatgptCustoAtual = 100;
 window.chatgptCustoAdicional = 50;
 
 window.chatgptAction = function (){

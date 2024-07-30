@@ -65,6 +65,9 @@ $(document).ready(function () {
 			case 'vscode':
 				vscodeAction();
 				break;
+			case 'php':
+				phpAction();
+				break;
 			case 'youtube':
 				youtubeAction();
 				break;
@@ -193,6 +196,6 @@ function EnterClickFix(){
 			setTimeout(() => {
                 alert("Cabo a farra fih");
             }, 100);
-		}
+				}
 	});
 }
