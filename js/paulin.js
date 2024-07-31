@@ -41,6 +41,14 @@ $(document).ready(function () {
 		iniciaTimer();
 	});
 
+	$('#save_run').on('click', function () {
+		alert("Ainda não foi implementado, em desenvolvimento scoreboard");
+	});
+
+	$('.close-end-popup').on('click', function () {
+		$('#end-run').addClass("hide");
+	});
+
 	$('#password').on('click', function () {
 		alert("Ainda não foi implementado mané, por isso está riscado");
 	});

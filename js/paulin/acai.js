@@ -13,9 +13,8 @@ window.acaiAction = function (){
             $('.acai-value').html('Maximo atingido');
             var yay = new Audio('../sources/audio/yay.mp3');
             yay.play();
-            setTimeout(() => {
-                alert("Você comprou o Açaí em: " + `${formattedMinutes}:${formattedSeconds}:${formattedMilliseconds}`);
-            }, 100);
+            $('.resultado_run').html(`${formattedMinutes}:${formattedSeconds}:${formattedMilliseconds}`);
+            $('#end-run').removeClass("hide");
         } else {
             $('.acai-value').html(window.acaiCustoAtual + ' Paulocoins');
         }
