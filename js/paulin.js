@@ -42,7 +42,8 @@ $(document).ready(function () {
 	});
 
 	$('#save_run').on('click', function () {
-		alert("Ainda não foi implementado, em desenvolvimento scoreboard");
+		nome = $('#run_name').val();
+		alert("Foi mal "+nome+", mas não tem como registrar um scoreboard sem um backend... é complicado...");
 	});
 
 	$('.close-end-popup').on('click', function () {
