@@ -10,12 +10,7 @@ var headset = 0;
 
 //timer speedrun
 var timer;
-let timer_minutes = 0;
-var formattedMinutes;
-let timer_seconds = 0;
-var formattedSeconds;
-let timer_milliseconds = 0;
-var formattedMilliseconds;
+var timerInit;
 
 $(document).ready(function () {
 	cacheImages();
@@ -157,27 +152,23 @@ function musicWorkAnimation() {
 }
 
 function iniciaTimer() {
+	timerInit = Date.now();
+
 	timer = setInterval(function () {
-		timer_milliseconds += 10;
+		const actualTime = Date.now();
+		const elapsed = actualTime - timerInit;
 
-		if (timer_milliseconds >= 1000) {
-			timer_milliseconds = 0;
-			timer_seconds++;
-		}
+		const totalSeconds = Math.floor(elapsed / 1000);
+		const minutes = Math.floor((totalSeconds % 3600) / 60);
+		const seconds = totalSeconds % 60;
 
-		if (timer_seconds === 60) {
-			timer_seconds = 0;
-			timer_minutes++;
-		}
-
-		formattedMinutes = timer_minutes < 10 ? `0${timer_minutes}` : timer_minutes;
-		formattedSeconds = timer_seconds < 10 ? `0${timer_seconds}` : timer_seconds;
-		formattedMilliseconds = Math.floor(timer_milliseconds / 10).toString().padStart(2, '0');
-
+		const formattedMinutes = String(minutes).padStart(2, '0');
+		const formattedSeconds = String(seconds).padStart(2, '0');
+		const formattedMs = String(elapsed).slice(-3).slice(0, 2);
 
 		$('#timer_minutes').html(`${formattedMinutes}`);
 		$('#timer_seconds').html(`${formattedSeconds}`);
-		$('#timer_ms').html(`${formattedMilliseconds}`);
+		$('#timer_ms').html(`${formattedMs}`);
 	}, 10);
 }
 
