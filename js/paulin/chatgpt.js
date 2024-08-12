@@ -16,6 +16,6 @@ window.chatgptAction = function (){
             $('.chatgpt-value').html(window.chatgptCustoAtual + ' Paulocoins');
 
         }
-        autoWork++;
+        autoWork5++;
     }
 }

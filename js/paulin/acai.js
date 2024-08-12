@@ -13,7 +13,7 @@ window.acaiAction = function (){
             $('.acai-value').html('Maximo atingido');
             var yay = new Audio('../sources/audio/yay.mp3');
             yay.play();
-            $('.resultado_run').html(`${formattedMinutes}:${formattedSeconds}:${formattedMilliseconds}`);
+            $('.resultado_run').html(`${formattedMinutes}:${formattedSeconds}:${formattedMs}`);
             $('#end-run').removeClass("hide");
         } else {
             $('.acai-value').html(window.acaiCustoAtual + ' Paulocoins');

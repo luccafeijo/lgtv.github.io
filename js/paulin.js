@@ -5,17 +5,22 @@ var working;
 var money = 0;
 var clickValue = 1;
 var passiveMoney = 0;
-var autoWork = 0;
+var autoWork2 = 0;
+var autoWork5 = 0;
 var headset = 0;
 
 //timer speedrun
 var timer;
 var timerInit;
+var formattedMinutes = 0;
+var formattedSeconds = 0;
+var formattedMs = 0;
 
 $(document).ready(function () {
 	cacheImages();
 	attPassiveMoney();
-	attAutoWork();
+	attAutoWork2();
+	attAutoWork5();
 	EnterClickFix();
 
 	$('#iniciar-jogo').on('click', function () {
@@ -81,6 +86,9 @@ $(document).ready(function () {
 			case 'chatgpt':
 				chatgptAction();
 				break;
+			case 'google':
+				googleAction();
+				break;
 			default:
 			// code block
 		}
@@ -115,10 +123,18 @@ function attPassiveMoney() {
 	}, 1000);
 }
 
-function attAutoWork() {
+function attAutoWork2() {
 	setInterval(function () {
-		if (autoWork) {
-			addMoney(clickValue * autoWork);
+		if (autoWork2) {
+			addMoney(clickValue * autoWork2);
+		}
+	}, 2000);
+}
+
+function attAutoWork5() {
+	setInterval(function () {
+		if (autoWork5) {
+			addMoney(clickValue * autoWork5);
 		}
 	}, 5000);
 }
@@ -162,9 +178,9 @@ function iniciaTimer() {
 		const minutes = Math.floor((totalSeconds % 3600) / 60);
 		const seconds = totalSeconds % 60;
 
-		const formattedMinutes = String(minutes).padStart(2, '0');
-		const formattedSeconds = String(seconds).padStart(2, '0');
-		const formattedMs = String(elapsed).slice(-3).slice(0, 2);
+		formattedMinutes = String(minutes).padStart(2, '0');
+		formattedSeconds = String(seconds).padStart(2, '0');
+		formattedMs = String(elapsed).slice(-3).slice(0, 2);
 
 		$('#timer_minutes').html(`${formattedMinutes}`);
 		$('#timer_seconds').html(`${formattedSeconds}`);
