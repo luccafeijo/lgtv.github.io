@@ -2,7 +2,7 @@ window.acai = 0;
 window.acaiCustoAtual = 10000;
 
 window.acaiAction = function (){
-    if(money >= window.acaiCustoAtual && window.acai < 10) {
+    if(money >= window.acaiCustoAtual && window.acai < 1) {
         money -= window.acaiCustoAtual;
         exibeMoney();
         window.acai++;
