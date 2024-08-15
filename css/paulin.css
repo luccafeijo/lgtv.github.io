@@ -186,7 +186,7 @@
 #game-actions button.store-action .front {
     display: block;
     position: relative;
-    padding: 12px 27px;
+    padding: 10px 27px;
     border-radius: 12px;
     font-size: 1.1rem;
     color: white;
@@ -194,12 +194,10 @@
     will-change: transform;
     transform: translateY(-4px);
     transition: transform 600ms cubic-bezier(.3, .7, .4, 1);
+}
+
+#game-actions button.store-action .front img{
     height: 30.4px;
-    background: url('../sources/images/paulinpim-game/paulin_store.png') 0px 0px;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-    margin: 13px 12px 7px 8px;
 }
 
 #game-actions button.secondary-action .edge {
