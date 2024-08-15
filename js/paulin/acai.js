@@ -6,17 +6,13 @@ window.acaiAction = function (){
         money -= window.acaiCustoAtual;
         exibeMoney();
         window.acai++;
-        $('.acai-progress-info').html(window.acai+'/1');
-        $('.acai-progress')[0].style.width = window.acai+"00%";
         if(window.acai == 1) {
             clearInterval(timer);
-            $('.acai-value').html('Maximo atingido');
             var yay = new Audio('../sources/audio/yay.mp3');
             yay.play();
             $('.resultado_run').html(`${formattedMinutes}:${formattedSeconds}:${formattedMs}`);
+            $('#loja').addClass("hide");
             $('#end-run').removeClass("hide");
-        } else {
-            $('.acai-value').html(window.acaiCustoAtual + ' Paulocoins');
         }
     }
 }

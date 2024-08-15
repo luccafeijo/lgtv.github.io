@@ -113,12 +113,16 @@ $(document).ready(function () {
 
 	$('.unique-action').on('click', function () {
 		switch (this.id) {
-			case 'acai':
-				acaiAction();
+			case 'mesamadeira':
+				mesamadeiraAction();
 				break;
 			default:
 			// code block
 		}
+	});
+
+	$('#loja_acai').on('click', function () {
+		acaiAction();
 	});
 });
 
