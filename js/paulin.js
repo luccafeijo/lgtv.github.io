@@ -206,19 +206,22 @@ function iniciaTimer() {
 }
 
 function cacheImages() {
-	// preloads = [
-	// 	'paulin_still.png',
-	// 	'paulin_work.png',
-	// 	'paulin_still_spotify.png',
-	// 	'paulin_work_spotify.png',
-	// 	'paulin_look.png',
-	// 	'paulin_bg.png',
-	// ];
+	preloads = [
+		'character/static/paulin_still.png',
+		'character/static/paulin_still_spotify.png',
+		'character/animations/paulin_work.png',
+		'character/animations/paulin_work_spotify.png',
+		'character/animations/paulin_look.png',
+		'character/background/paulin_bg.png',
+		'character/chair/cadeira_azul.png',
+		'character/table/mesa_branca.png',
+		'character/table/mesa_madeira.png',
+	];
 
-	// preloads.forEach(function (element) {
-	// 	var tempImg = new Image()
-	// 	tempImg.src = '../sources/images/paulinpim-game/' + element;
-	// });
+	preloads.forEach(function (element) {
+		var tempImg = new Image()
+		tempImg.src = '../sources/images/paulinpim-game/' + element;
+	});
 }
 
 function EnterClickFix(){
