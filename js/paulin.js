@@ -25,14 +25,20 @@ $(document).ready(function () {
 
 	$('#iniciar-jogo').on('click', function () {
 		$('#main-menu').addClass("hide");
+		$('#scenary').removeClass("hide");
 		$('#character').removeClass("hide");
+		$('#mesa').removeClass("hide");
+		$('#cadeira').removeClass("hide");
 		$('.overlay').removeClass("hide");
 		$('#game-actions').removeClass("hide");
 	});
 
 	$('#iniciar-speedrun').on('click', function () {
 		$('#main-menu').addClass("hide");
+		$('#scenary').removeClass("hide");
 		$('#character').removeClass("hide");
+		$('#mesa').removeClass("hide");
+		$('#cadeira').removeClass("hide");
 		$('.overlay').removeClass("hide");
 		$('#game-actions').removeClass("hide");
 		$('#speedrun-upgrade').removeClass("hide");
@@ -200,19 +206,19 @@ function iniciaTimer() {
 }
 
 function cacheImages() {
-	preloads = [
-		'paulin_still.png',
-		'paulin_work.png',
-		'paulin_still_spotify.png',
-		'paulin_work_spotify.png',
-		'paulin_look.png',
-		'paulin_bg.png',
-	];
+	// preloads = [
+	// 	'paulin_still.png',
+	// 	'paulin_work.png',
+	// 	'paulin_still_spotify.png',
+	// 	'paulin_work_spotify.png',
+	// 	'paulin_look.png',
+	// 	'paulin_bg.png',
+	// ];
 
-	preloads.forEach(function (element) {
-		var tempImg = new Image()
-		tempImg.src = '../sources/images/paulinpim-game/' + element;
-	});
+	// preloads.forEach(function (element) {
+	// 	var tempImg = new Image()
+	// 	tempImg.src = '../sources/images/paulinpim-game/' + element;
+	// });
 }
 
 function EnterClickFix(){

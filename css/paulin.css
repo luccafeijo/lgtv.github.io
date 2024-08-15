@@ -53,11 +53,20 @@
 }
 
 #scenary {
-    background: url('../sources/images/paulinpim-game/paulin_bg.png');
+    background: url('../sources/images/paulinpim-game/character/background/paulin_bg.png');
+    width: 100%;
+    height: 256px;
 }
 
-#scenary #character {
+#scenary #main-view {
+    width: 256px;
+    height: 256px;
     margin: auto;
+}
+
+#scenary #main-view div {
+    display: flex;
+    position: absolute;
 }
 
 #game-actions div.row {
@@ -475,7 +484,7 @@
 .still {
     width: 256px;
     height: 256px;
-    background: url('../sources/images/paulinpim-game/paulin_still.png') 0px 0px;
+    background: url('../sources/images/paulinpim-game/character/static/paulin_still.png') 0px 0px;
     image-rendering: pixelated;
     image-rendering: crisp-edges;
 }
@@ -483,7 +492,7 @@
 .work {
     width: 256px;
     height: 256px;
-    background: url('../sources/images/paulinpim-game/paulin_work.png') 0px 0px;
+    background: url('../sources/images/paulinpim-game/character/animations/paulin_work.png') 0px 0px;
     image-rendering: pixelated;
     image-rendering: crisp-edges;
     animation: working 0.3s steps(2) infinite;
@@ -492,7 +501,7 @@
 .still_spotify {
     width: 256px;
     height: 256px;
-    background: url('../sources/images/paulinpim-game/paulin_still_spotify.png') 0px 0px;
+    background: url('../sources/images/paulinpim-game/character/static/paulin_still_spotify.png') 0px 0px;
     image-rendering: pixelated;
     image-rendering: crisp-edges;
 }
@@ -500,7 +509,7 @@
 .work_spotify {
     width: 256px;
     height: 256px;
-    background: url('../sources/images/paulinpim-game/paulin_work_spotify.png') 0px 0px;
+    background: url('../sources/images/paulinpim-game/character/animations/paulin_work_spotify.png') 0px 0px;
     image-rendering: pixelated;
     image-rendering: crisp-edges;
     animation: working_spotify 2.0s steps(6) infinite;
@@ -509,7 +518,37 @@
 .look {
     width: 256px;
     height: 256px;
-    background: url('../sources/images/paulinpim-game/paulin_look.png') 0px 0px;
+    background: url('../sources/images/paulinpim-game/character/animations/paulin_look.png') 0px 0px;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+    animation: looking 0.3s steps(2) infinite;
+}
+/* fim animações */
+
+/* mesas */
+.mesa_branca {
+    width: 256px;
+    height: 256px;
+    background: url('../sources/images/paulinpim-game/character/table/mesa_branca.png') 0px 0px;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+    animation: looking 0.3s steps(2) infinite;
+}
+
+.mesa_madeira {
+    width: 256px;
+    height: 256px;
+    background: url('../sources/images/paulinpim-game/character/table/mesa_madeira.png') 0px 0px;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+    animation: looking 0.3s steps(2) infinite;
+}
+
+/* cadeiras */
+.cadeira_azul {
+    width: 256px;
+    height: 256px;
+    background: url('../sources/images/paulinpim-game/character/chair/cadeira_azul.png') 0px 0px;
     image-rendering: pixelated;
     image-rendering: crisp-edges;
     animation: looking 0.3s steps(2) infinite;
