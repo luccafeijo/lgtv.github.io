@@ -50,6 +50,17 @@ $(document).ready(function () {
 		$('#end-run').addClass("hide");
 	});
 
+	//open loja
+	$('#store-action').on('click', function () {
+		$('#loja').removeClass("hide");
+	});
+
+	//close loja
+	$('.close-loja-popup').on('click', function () {
+		$('#loja').addClass("hide");
+	});
+	
+
 	$('#password').on('click', function () {
 		alert("Ainda não foi implementado mané, por isso está riscado");
 	});
