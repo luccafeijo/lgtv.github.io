@@ -17,7 +17,7 @@ window.phpAction = function (){
             $('.php-value').html(window.phpCustoAtual + ' Paulocoins');
         }
 
-        clickValue = clickValue + 2;
+        clickValue += 2;
     }
 }
 ''

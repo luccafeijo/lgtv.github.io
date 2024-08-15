@@ -99,6 +99,7 @@
 }
 
 #game-actions .card {
+    width: 100%;
     display: inline-table;
     background-color: unset;
     border: none;

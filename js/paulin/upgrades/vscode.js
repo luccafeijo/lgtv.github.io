@@ -17,7 +17,7 @@ window.vscodeAction = function (){
             $('.vscode-value').html(window.vscodeCustoAtual + ' Paulocoins');
         }
 
-        clickValue = clickValue + 1;
+        clickValue += 1;
     }
 }
 

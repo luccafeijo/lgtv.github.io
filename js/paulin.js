@@ -113,6 +113,9 @@ $(document).ready(function () {
 
 	$('.unique-action').on('click', function () {
 		switch (this.id) {
+			case 'cadeiraazul':
+				cadeiraazulAction();
+				break;
 			case 'mesamadeira':
 				mesamadeiraAction();
 				break;

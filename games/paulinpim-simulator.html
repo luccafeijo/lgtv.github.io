@@ -106,7 +106,7 @@
             <div id="main-view">
                 <div id="character" class="still hide"></div>
                 <div id="mesa" class="mesa_branca hide"></div>
-                <div id="cadeira" class="cadeira_azul hide"></div>
+                <div id="cadeira" class="cadeira_verde hide"></div>
             </div>
         </div>
         <div class="overlay hide">
@@ -309,6 +309,28 @@
                     <hr/>
                     <div class="card">
                         <div class="col-md-6">
+                            <button class="unique-action blocked" id="cadeiraazul">
+                                <span class="shadow"></span>
+                                <span class="edge"></span>
+                                <span class="front text">Cadeira Azul</span>
+                            </button>
+                            <p class="cadeira-azul-value value">1000 Paulocoins</p>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="upgrade-progress">
+                                <p class="cadeira-azul-progress-info progress-info">0/1</p>
+                                <div class="progress">
+                                    <div class="cadeira-azul-progress progress-bar"></div>
+                                </div>
+                            </div>
+                            <div class="upgrade-description">
+                                <p>Gera 10 a cada seg</p>
+                            </div>
+                        </div>
+                    </div>
+                    <hr/>
+                    <div class="card">
+                        <div class="col-md-6">
                             <button class="unique-action blocked" id="mesamadeira">
                                 <span class="shadow"></span>
                                 <span class="edge"></span>
@@ -331,19 +353,22 @@
                 </div>
             </div>
         </div>
-        <script src="../js/paulin/spotify.js"></script>
-        <script src="../js/paulin/vscode.js"></script>
-        <script src="../js/paulin/php.js"></script>
-        <script src="../js/paulin/youtube.js"></script>
-        <script src="../js/paulin/netflix.js"></script>
-        <script src="../js/paulin/chatgpt.js"></script>
-        <script src="../js/paulin/google.js"></script>
+        <script src="../js/paulin/upgrades/spotify.js"></script>
+        <script src="../js/paulin/upgrades/vscode.js"></script>
+        <script src="../js/paulin/upgrades/php.js"></script>
+        <script src="../js/paulin/upgrades/youtube.js"></script>
+        <script src="../js/paulin/upgrades/netflix.js"></script>
+        <script src="../js/paulin/upgrades/chatgpt.js"></script>
+        <script src="../js/paulin/upgrades/google.js"></script>
 
         <!-- unique -->
+        <script src="../js/paulin/unique/cadeiraazul.js"></script>
         <script src="../js/paulin/unique/mesamadeira.js"></script>
 
         <!-- loja -->
-        <script src="../js/paulin/acai.js"></script>
+        <script src="../js/paulin/loja/acai.js"></script>
+
+        <!-- main -->
         <script src="../js/paulin.js"></script>
     </body>
 </html>

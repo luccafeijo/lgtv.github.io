@@ -13,7 +13,7 @@ window.mesamadeiraAction = function (){
         $('#mesa').removeClass("mesa_branca");
 	    $('#mesa').addClass("mesa_madeira");
 
-        clickValue = clickValue + 10;
+        clickValue += 10;
     }
 }
 
