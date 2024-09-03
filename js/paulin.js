@@ -124,9 +124,20 @@ $(document).ready(function () {
 		}
 	});
 
+	/* loja */
 	$('#loja_acai').on('click', function () {
 		acaiAction();
 	});
+
+	$('#loja_summer_cursor').on('click', function () {
+		cursorSummerAction();
+	});
+
+	$('#loja_summer_bg').on('click', function () {
+		bgSummerAction();
+	});
+
+
 });
 
 function addMoney(value) {

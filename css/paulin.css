@@ -582,6 +582,15 @@
     image-rendering: crisp-edges;
 }
 
+/*compras da loja*/
+.background_summer {
+    background: url('../sources/images/paulinpim-game/loja/summer_event/backgroundv1.png') !important;
+}
+
+.cursor_summer {
+    cursor: url('../sources/images/paulinpim-game/loja/summer_event/cursor.png'), auto;
+}
+
 @keyframes working {
     from { background-position: 0px; }
     to { background-position: -512px; }
