@@ -516,7 +516,7 @@
 }
 
 /* Animações */
-.still {
+#character.still {
     width: 256px;
     height: 256px;
     background: url('../sources/images/paulinpim-game/character/static/paulin_still.png') 0px 0px;
@@ -524,7 +524,7 @@
     image-rendering: crisp-edges;
 }
 
-.work {
+#character.work {
     width: 256px;
     height: 256px;
     background: url('../sources/images/paulinpim-game/character/animations/paulin_work.png') 0px 0px;
@@ -533,7 +533,7 @@
     animation: working 0.3s steps(2) infinite;
 }
 
-.still_spotify {
+#character.still_spotify {
     width: 256px;
     height: 256px;
     background: url('../sources/images/paulinpim-game/character/static/paulin_still_spotify.png') 0px 0px;
@@ -541,7 +541,7 @@
     image-rendering: crisp-edges;
 }
 
-.work_spotify {
+#character.work_spotify {
     width: 256px;
     height: 256px;
     background: url('../sources/images/paulinpim-game/character/animations/paulin_work_spotify.png') 0px 0px;
@@ -550,14 +550,14 @@
     animation: working_spotify 2.0s steps(6) infinite;
 }
 
-.look {
+/* .look {
     width: 256px;
     height: 256px;
     background: url('../sources/images/paulinpim-game/character/animations/paulin_look.png') 0px 0px;
     image-rendering: pixelated;
     image-rendering: crisp-edges;
     animation: looking 0.3s steps(2) infinite;
-}
+} */
 /* fim animações */
 
 /* mesas */
