@@ -591,6 +591,14 @@
     cursor: url('../sources/images/paulinpim-game/loja/summer_event/cursor.png'), auto;
 }
 
+.cursor_summer #game-actions button,
+.cursor_summer #end-run .close-end-popup,
+.cursor_summer #loja .close-loja-popup,
+.cursor_summer #loja button
+ {
+    cursor: url('../sources/images/paulinpim-game/loja/summer_event/cursor-open.png'), auto;
+}
+
 @keyframes working {
     from { background-position: 0px; }
     to { background-position: -512px; }
