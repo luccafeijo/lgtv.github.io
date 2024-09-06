@@ -402,7 +402,7 @@
 
 #loja {
     border: 2px solid #FFF;
-    border-radius: 20px;
+    border-radius: 15px;
     position: fixed;
     z-index: 1;
     left: 0;
@@ -415,6 +415,7 @@
     overflow: auto;
     overflow-y: hidden;
     z-index: 3;
+    box-shadow: 0px 0px 15px 3px rgba(0,0,0,0.75);
 }
 
 #loja .row {
@@ -434,6 +435,11 @@
 
 #loja h5 {
     text-align: center;
+}
+
+#loja h5.categoria-loja {
+    color: #3076cd;
+    text-decoration: underline;
 }
 
 #loja img {
@@ -483,7 +489,13 @@
     opacity: 0.6;
 }
 
+#loja .col-md-6.left,
+#loja .col-md-6.right {
+    padding: 0px
+}
+
 #loja .card-loja {
+    height: 100%;
     border: 1px solid rgb(233, 233, 233);
     padding: 10px;
 }

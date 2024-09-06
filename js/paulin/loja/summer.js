@@ -10,6 +10,7 @@ window.cursorSummerAction = function (){
         exibeMoney();
         window.cursorSummer++;
         if(window.cursorSummer == 1) {
+            $('#loja_summer_cursor').html('Comprado');
             $('body').addClass('cursor_summer');
         }
     }
@@ -21,6 +22,7 @@ window.bgSummerAction = function (){
         exibeMoney();
         window.bgSummer++;
         if(window.bgSummer == 1) {
+            $('#loja_summer_bg').html('Comprado');
             $('#scenary').addClass('background_summer');
         }
     }
