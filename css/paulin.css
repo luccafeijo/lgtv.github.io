@@ -611,6 +611,52 @@
     cursor: url('../sources/images/paulinpim-game/loja/summer_event/cursor-open.png'), auto;
 }
 
+#character.summer.still {
+    width: 256px;
+    height: 256px;
+    background: url('../sources/images/paulinpim-game/loja/summer_event/skin/paulin_still.png') 0px 0px;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+}
+
+#character.summer.work {
+    width: 256px;
+    height: 256px;
+    background: url('../sources/images/paulinpim-game/loja/summer_event/skin/paulin_work.png') 0px 0px;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+    animation: summer_working 0.3s steps(2) infinite;
+}
+
+@keyframes summer_working {
+    from { background-position: 0px; }
+    to { background-position: -512px; }
+}
+
+#character.summer.still_spotify {
+    width: 256px;
+    height: 256px;
+    background: url('../sources/images/paulinpim-game/loja/summer_event/skin/paulin_still_spotify.png') 0px 0px;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+}
+
+#character.summer.work_spotify {
+    width: 256px;
+    height: 256px;
+    background: url('../sources/images/paulinpim-game/loja/summer_event/skin/paulin_work_spotify.png') 0px 0px;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+    animation: summer_working_spotify 2.0s steps(6) infinite;
+}
+
+@keyframes summer_working_spotify {
+    from { background-position: 0px; }
+    to { background-position: -1536px; }
+}
+
+/*----*/
+
 @keyframes working {
     from { background-position: 0px; }
     to { background-position: -512px; }
