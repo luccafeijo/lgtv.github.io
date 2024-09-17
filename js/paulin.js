@@ -230,15 +230,49 @@ function iniciaTimer() {
 
 function cacheImages() {
 	preloads = [
-		'character/static/paulin_still.png',
-		'character/static/paulin_still_spotify.png',
+		//pasta raiz
+		'game-menu.png',
+		'paulin_store.png',
+		'Paulocoin.png',
+		
+		//character animations
 		'character/animations/paulin_work.png',
 		'character/animations/paulin_work_spotify.png',
 		'character/animations/paulin_look.png',
+
+		//character background
 		'character/background/paulin_bg.png',
+
+		//character chair
+		'character/chair/cadeira_verde.png',
 		'character/chair/cadeira_azul.png',
+
+		//character static
+		'character/static/paulin_still.png',
+		'character/static/paulin_still_spotify.png',
+
+		//character table
 		'character/table/mesa_branca.png',
 		'character/table/mesa_madeira.png',
+
+		// --SUMMER EVENT--
+		//loja / summer event / icons
+		'loja/summer_event/icons/background_icon.png',
+		'loja/summer_event/icons/cursor_icon.png',
+		'loja/summer_event/icons/skin_icon.png',
+
+		//loja / summer event / skin
+		'loja/summer_event/skin/paulin_still.png',
+		'loja/summer_event/skin/paulin_still_spotify.png',
+		'loja/summer_event/skin/paulin_work.png',
+		'loja/summer_event/skin/paulin_work_spotify.png',
+
+		//loja / summer event / cursor
+		'loja/summer_event/cursor/cursor.png',
+		'loja/summer_event/cursor/cursor-open.png',
+
+		//loja / summer event
+		'loja/summer_event/backgroundv2.png',
 	];
 
 	preloads.forEach(function (element) {

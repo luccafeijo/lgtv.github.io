@@ -26,6 +26,7 @@ window.bgSummerAction = function (){
         window.bgSummer++;
         if(window.bgSummer == 1) {
             $('#loja_summer_bg').html('Comprado');
+            $('#scenary').removeClass('background');
             $('#scenary').addClass('background_summer');
         }
     }
