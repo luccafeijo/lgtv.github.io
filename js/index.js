@@ -1,9 +1,9 @@
 $( document ).ready(function() {
     randomText('minesweepergame');
     randomText('paulingame');
-    randomText('fortnite2game');
-    randomText('fnfgame');
-    randomText('marioVgame');
+    // randomText('fortnite2game');
+    // randomText('fnfgame');
+    // randomText('marioVgame');
 });
 
 const gametexts = {
