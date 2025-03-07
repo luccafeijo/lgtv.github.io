@@ -5,29 +5,40 @@ var working;
 var money = 0;
 var clickValue = 1;
 var passiveMoney = 0;
-var autoWork = 0;
+var autoWork2 = 0;
+var autoWork5 = 0;
 var headset = 0;
 
 //timer speedrun
 var timer;
 var timerInit;
+var formattedMinutes = 0;
+var formattedSeconds = 0;
+var formattedMs = 0;
 
 $(document).ready(function () {
 	cacheImages();
 	attPassiveMoney();
-	attAutoWork();
+	attAutoWork2();
+	attAutoWork5();
 	EnterClickFix();
 
 	$('#iniciar-jogo').on('click', function () {
 		$('#main-menu').addClass("hide");
+		$('#scenary').removeClass("hide");
 		$('#character').removeClass("hide");
+		$('#mesa').removeClass("hide");
+		$('#cadeira').removeClass("hide");
 		$('.overlay').removeClass("hide");
 		$('#game-actions').removeClass("hide");
 	});
 
 	$('#iniciar-speedrun').on('click', function () {
 		$('#main-menu').addClass("hide");
+		$('#scenary').removeClass("hide");
 		$('#character').removeClass("hide");
+		$('#mesa').removeClass("hide");
+		$('#cadeira').removeClass("hide");
 		$('.overlay').removeClass("hide");
 		$('#game-actions').removeClass("hide");
 		$('#speedrun-upgrade').removeClass("hide");
@@ -44,6 +55,17 @@ $(document).ready(function () {
 	$('.close-end-popup').on('click', function () {
 		$('#end-run').addClass("hide");
 	});
+
+	//open loja
+	$('#store-action').on('click', function () {
+		$('#loja').removeClass("hide");
+	});
+
+	//close loja
+	$('.close-loja-popup').on('click', function () {
+		$('#loja').addClass("hide");
+	});
+	
 
 	$('#password').on('click', function () {
 		alert("Ainda não foi implementado mané, por isso está riscado");
@@ -81,6 +103,9 @@ $(document).ready(function () {
 			case 'chatgpt':
 				chatgptAction();
 				break;
+			case 'google':
+				googleAction();
+				break;
 			default:
 			// code block
 		}
@@ -88,13 +113,36 @@ $(document).ready(function () {
 
 	$('.unique-action').on('click', function () {
 		switch (this.id) {
-			case 'acai':
-				acaiAction();
+			case 'cadeiraazul':
+				cadeiraazulAction();
+				break;
+			case 'mesamadeira':
+				mesamadeiraAction();
 				break;
 			default:
 			// code block
 		}
 	});
+
+	/* loja */
+	$('#loja_acai').on('click', function () {
+		acaiAction();
+	});
+
+	/* Summer */
+	$('#loja_summer_cursor').on('click', function () {
+		cursorSummerAction();
+	});
+
+	$('#loja_summer_bg').on('click', function () {
+		bgSummerAction();
+	});
+
+	$('#loja_summer_skin').on('click', function () {
+		skinSummerAction();
+	});
+
+
 });
 
 function addMoney(value) {
@@ -115,10 +163,18 @@ function attPassiveMoney() {
 	}, 1000);
 }
 
-function attAutoWork() {
+function attAutoWork2() {
 	setInterval(function () {
-		if (autoWork) {
-			addMoney(clickValue * autoWork);
+		if (autoWork2) {
+			addMoney(clickValue * autoWork2);
+		}
+	}, 2000);
+}
+
+function attAutoWork5() {
+	setInterval(function () {
+		if (autoWork5) {
+			addMoney(clickValue * autoWork5);
 		}
 	}, 5000);
 }
@@ -162,9 +218,9 @@ function iniciaTimer() {
 		const minutes = Math.floor((totalSeconds % 3600) / 60);
 		const seconds = totalSeconds % 60;
 
-		const formattedMinutes = String(minutes).padStart(2, '0');
-		const formattedSeconds = String(seconds).padStart(2, '0');
-		const formattedMs = String(elapsed).slice(-3).slice(0, 2);
+		formattedMinutes = String(minutes).padStart(2, '0');
+		formattedSeconds = String(seconds).padStart(2, '0');
+		formattedMs = String(elapsed).slice(-3).slice(0, 2);
 
 		$('#timer_minutes').html(`${formattedMinutes}`);
 		$('#timer_seconds').html(`${formattedSeconds}`);
@@ -174,12 +230,49 @@ function iniciaTimer() {
 
 function cacheImages() {
 	preloads = [
-		'paulin_still.png',
-		'paulin_work.png',
-		'paulin_still_spotify.png',
-		'paulin_work_spotify.png',
-		'paulin_look.png',
-		'paulin_bg.png',
+		//pasta raiz
+		'game-menu.png',
+		'paulin_store.png',
+		'Paulocoin.png',
+		
+		//character animations
+		'character/animations/paulin_work.png',
+		'character/animations/paulin_work_spotify.png',
+		'character/animations/paulin_look.png',
+
+		//character background
+		'character/background/paulin_bg.png',
+
+		//character chair
+		'character/chair/cadeira_verde.png',
+		'character/chair/cadeira_azul.png',
+
+		//character static
+		'character/static/paulin_still.png',
+		'character/static/paulin_still_spotify.png',
+
+		//character table
+		'character/table/mesa_branca.png',
+		'character/table/mesa_madeira.png',
+
+		// --SUMMER EVENT--
+		//loja / summer event / icons
+		'loja/summer_event/icons/background_icon.png',
+		'loja/summer_event/icons/cursor_icon.png',
+		'loja/summer_event/icons/skin_icon.png',
+
+		//loja / summer event / skin
+		'loja/summer_event/skin/paulin_still.png',
+		'loja/summer_event/skin/paulin_still_spotify.png',
+		'loja/summer_event/skin/paulin_work.png',
+		'loja/summer_event/skin/paulin_work_spotify.png',
+
+		//loja / summer event / cursor
+		'loja/summer_event/cursor/cursor.png',
+		'loja/summer_event/cursor/cursor-open.png',
+
+		//loja / summer event
+		'loja/summer_event/backgroundv2.png',
 	];
 
 	preloads.forEach(function (element) {

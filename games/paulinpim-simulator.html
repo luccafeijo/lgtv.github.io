@@ -22,6 +22,8 @@
                 <button id="password">Password</button>
             </div>
         </div>
+
+        <!-- INICIO End run popup -->
         <div id="end-run" class="hide">
             <p class="close-end-popup">X</p>
             <h5>Seu tempo foi:</h5>
@@ -30,8 +32,104 @@
             <input type="text" id="run_name" name="run_name">
             <button id="save_run">Registrar run</button>
         </div>
-        <div id="scenary">
-            <div id="character" class="still hide"></div>
+        <!-- FIM End run popup -->
+
+        <!-- INICIO loja popup -->
+        <div id="loja" class="hide">
+            <p class="close-loja-popup">X</p>
+            <h5>Loja</h5>
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="speedrun-upgrade" class="card-loja hide">
+                        <div class="row">
+                            <div class="col-md-6 align_center">
+                                <p class="card-title">Açaí</p>
+                                <img src="../sources/images/paulinpim-game/loja/acai_sprite.png">
+                            </div>
+                            <div class="col-md-6 align_center">
+                                <button id="loja_acai">10.000</button>
+                                <p class="card-description">Fim da speedrun</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br/>
+            <div class="row">
+                <div class="col-md-12">
+                    <h5 class="categoria-loja">Evento de verão</h5>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 left">
+                        <div class="card-loja">
+                            <div class="row">
+                                <div class="col-md-6 align_center">
+                                    <p class="card-title">Cursor guarda-sol</p>
+                                    <img src="../sources/images/paulinpim-game/loja/summer_event/icons/cursor_icon.png">
+                                </div>
+                                <div class="col-md-6 align_center">
+                                    <button id="loja_summer_cursor">1.000</button>
+                                    <p class="card-description">Altera seu cursor para um guarda-sol (evento de verão)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 right">
+                        <div class="card-loja">
+                            <div class="row">
+                                <div class="col-md-6 align_center">
+                                    <p class="card-title">Praia</p>
+                                    <img src="../sources/images/paulinpim-game/loja/summer_event/icons/background_icon.png">
+                                </div>
+                                <div class="col-md-6 align_center">
+                                    <button id="loja_summer_bg">5.000</button>
+                                    <p class="card-description">Vá para a praia um pouco (evento de verão)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div class="row">
+                    <div class="col-md-6 left">
+                        <div class="card-loja">
+                            <div class="row">
+                                <div class="col-md-6 align_center">
+                                    <p class="card-title">Skin Cananéia</p>
+                                    <img src="../sources/images/paulinpim-game/loja/summer_event/icons/skin_icon.png">
+                                </div>
+                                <div class="col-md-6 align_center">
+                                    <button id="loja_summer_skin">10.000</button>
+                                    <p class="card-description">Altera sua skin (evento de verão)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 right">
+                        <div class="card-loja">
+                            <div class="row">
+                                <div class="col-md-6 align_center">
+                                    <p class="card-title">Coming Soon</p>
+                                    <img src="../sources/images/paulinpim-game/loja/missingno.png">
+                                </div>
+                                <div class="col-md-6 align_center">
+                                    <button id="disabled-item">?</button>
+                                    <p class="card-description">??? (evento de verão)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>  
+            </div>
+            
+        </div>
+        <!-- FIM loja popup -->
+
+        <div id="scenary" class="background hide">
+            <div id="main-view">
+                <div id="character" class="still hide"></div>
+                <div id="mesa" class="mesa_branca hide"></div>
+                <div id="cadeira" class="cadeira_verde hide"></div>
+            </div>
         </div>
         <div class="overlay hide">
             <div class="status">
@@ -45,11 +143,18 @@
         </div>
         <div id="game-actions" class="hide">
             <div class="row">
-                <div class="col-12 col-md-12 align_center">
+                <div class="col-12 col-md-4 offset-4 align_center">
                     <button id="main-action" class="main-action">
                         <span class="shadow"></span>
                         <span class="edge"></span>
                         <span class="front text">Trabaiar</span>
+                    </button>
+                </div>
+                <div class="col-12 col-md-4">
+                    <button id="store-action" class="store-action" style="float: right;">
+                        <span class="shadow"></span>
+                        <span class="edge"></span>
+                        <span class="front text"><img src="../sources/images/paulinpim-game/paulin_store.png"></span>
                     </button>
                 </div>
             </div>
@@ -197,41 +302,96 @@
                             </div>
                         </div>
                     </div>
+                    <hr/>
+                    <div class="card">
+                        <div class="col-md-6">
+                            <button class="secondary-action blocked" id="google">
+                                <span class="shadow"></span>
+                                <span class="edge"></span>
+                                <span class="front text">Google</span>
+                            </button>
+                            <p class="google-value value">250 Paulocoins</p>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="upgrade-progress">
+                                <p class="google-progress-info progress-info">0/10</p>
+                                <div class="progress">
+                                    <div class="google-progress progress-bar"></div>
+                                </div>
+    
+                            </div>
+                            <div class="upgrade-description">
+                                <p>Trabaia pra você a cada 2 segundos</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-12 col-md-3  coluna-up-4 align_center">
                     <h5>Upgrades Únicos</h5>
                     <hr/>
-                    <div id="speedrun-upgrade" class="card hide">
+                    <div class="card">
                         <div class="col-md-6">
-                            <button class="unique-action blocked" id="acai">
+                            <button class="unique-action blocked" id="cadeiraazul">
                                 <span class="shadow"></span>
                                 <span class="edge"></span>
-                                <span class="front text">Açaí</span>
+                                <span class="front text">Cadeira Azul</span>
                             </button>
-                            <p class="acai-value value">10000 Paulocoins</p>
+                            <p class="cadeira-azul-value value">1000 Paulocoins</p>
                         </div>
                         <div class="col-md-6">
                             <div class="upgrade-progress">
-                                <p class="acai-progress-info progress-info">0/1</p>
+                                <p class="cadeira-azul-progress-info progress-info">0/1</p>
                                 <div class="progress">
-                                    <div class="acai-progress progress-bar"></div>
+                                    <div class="cadeira-azul-progress progress-bar"></div>
                                 </div>
                             </div>
                             <div class="upgrade-description">
-                                <p>Fim da Speedrun</p>
+                                <p>Gera 10 a cada seg</p>
+                            </div>
+                        </div>
+                    </div>
+                    <hr/>
+                    <div class="card">
+                        <div class="col-md-6">
+                            <button class="unique-action blocked" id="mesamadeira">
+                                <span class="shadow"></span>
+                                <span class="edge"></span>
+                                <span class="front text">Mesa Madeira</span>
+                            </button>
+                            <p class="mesa-madeira-value value">1000 Paulocoins</p>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="upgrade-progress">
+                                <p class="mesa-madeira-progress-info progress-info">0/1</p>
+                                <div class="progress">
+                                    <div class="mesa-madeira-progress progress-bar"></div>
+                                </div>
+                            </div>
+                            <div class="upgrade-description">
+                                <p>Aumenta em 10 o valor ganho ao trabaia</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <script src="../js/paulin/spotify.js"></script>
-        <script src="../js/paulin/vscode.js"></script>
-        <script src="../js/paulin/php.js"></script>
-        <script src="../js/paulin/youtube.js"></script>
-        <script src="../js/paulin/netflix.js"></script>
-        <script src="../js/paulin/chatgpt.js"></script>
-        <script src="../js/paulin/acai.js"></script>
+        <script src="../js/paulin/upgrades/spotify.js"></script>
+        <script src="../js/paulin/upgrades/vscode.js"></script>
+        <script src="../js/paulin/upgrades/php.js"></script>
+        <script src="../js/paulin/upgrades/youtube.js"></script>
+        <script src="../js/paulin/upgrades/netflix.js"></script>
+        <script src="../js/paulin/upgrades/chatgpt.js"></script>
+        <script src="../js/paulin/upgrades/google.js"></script>
+
+        <!-- unique -->
+        <script src="../js/paulin/unique/cadeiraazul.js"></script>
+        <script src="../js/paulin/unique/mesamadeira.js"></script>
+
+        <!-- loja -->
+        <script src="../js/paulin/loja/acai.js"></script>
+        <script src="../js/paulin/loja/summer.js"></script>
+
+        <!-- main -->
         <script src="../js/paulin.js"></script>
     </body>
 </html>
