@@ -1,29 +1,181 @@
-
 body {
-    margin: 0px;
+    margin: 0;
+}
+
+#menu {
+    position: sticky;
+    top: 0;
+    z-index: 999;
 }
 
 .top-menu {
-    background: linear-gradient(0deg, rgba(80,80,80,1) 0%, rgba(82,82,82,1) 50%, rgba(80,80,80,1) 100%); 
-    img {
-        height: 50px;
-    };
-    position: relative;
-    z-index: 999 !important;
-    padding: 5px;
+    --menu-surface: rgba(14, 18, 24, 0.82);
+    --menu-surface-strong: rgba(24, 30, 38, 0.92);
+    --menu-border: rgba(255, 255, 255, 0.12);
+    --menu-text: #f4f7fb;
+    --menu-muted: rgba(244, 247, 251, 0.72);
+    --menu-accent: #5eead4;
+    --menu-shadow: 0 18px 40px rgba(0, 0, 0, 0.24);
+    box-sizing: border-box;
+    padding: 14px 18px;
+    color: var(--menu-text);
+}
 
-    div.link {
-        width: fit-content;
-        padding: 2px;
-        background-color: rgba(80, 80, 80, 1);
-        border-radius: 5px;
+.top-menu *,
+.top-menu *::before,
+.top-menu *::after {
+    box-sizing: border-box;
+}
+
+.top-menu__shell {
+    width: min(1100px, calc(100% - 8px));
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    padding: 12px 18px;
+    border: 1px solid var(--menu-border);
+    border-radius: 22px;
+    background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.08), transparent 55%),
+        linear-gradient(180deg, var(--menu-surface), var(--menu-surface-strong));
+    box-shadow: var(--menu-shadow);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+}
+
+.top-menu__brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    color: inherit;
+    text-decoration: none;
+    min-width: 0;
+}
+
+.top-menu__brand:hover {
+    color: inherit;
+    text-decoration: none;
+}
+
+.top-menu__brand-mark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.04));
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.top-menu__brand-mark img {
+    width: 38px;
+    height: 38px;
+    object-fit: contain;
+    display: block;
+}
+
+.top-menu__brand-text {
+    min-width: 0;
+}
+
+.top-menu__eyebrow,
+.top-menu__title {
+    display: block;
+    line-height: 1.1;
+}
+
+.top-menu__eyebrow {
+    margin-bottom: 3px;
+    font-size: 0.68rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--menu-muted);
+}
+
+.top-menu__title {
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+}
+
+.top-menu__nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.top-menu__link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    padding: 0 16px;
+    border-radius: 999px;
+    border: 1px solid transparent;
+    color: var(--menu-muted);
+    background: rgba(255, 255, 255, 0.04);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    transition:
+        transform 140ms ease,
+        background-color 140ms ease,
+        color 140ms ease,
+        border-color 140ms ease,
+        box-shadow 140ms ease;
+}
+
+.top-menu__link:hover {
+    color: var(--menu-text);
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.16);
+    transform: translateY(-1px);
+}
+
+.top-menu__link:focus-visible {
+    outline: 2px solid var(--menu-accent);
+    outline-offset: 3px;
+}
+
+.top-menu__link.is-active {
+    color: #081018;
+    background: linear-gradient(135deg, #c4fff5, var(--menu-accent));
+    box-shadow: 0 10px 24px rgba(94, 234, 212, 0.28);
+}
+
+@media (max-width: 700px) {
+    .top-menu {
+        padding: 12px;
     }
 
-    div.link.active {
-        width: fit-content;
-        padding: 2px;
-        background-color: rgba(90, 90, 90, 1);
-        border-right: 2px rgba(80, 80, 80, 1);
-        border-radius: 5px;
+    .top-menu__shell {
+        width: 100%;
+        padding: 14px;
+        border-radius: 20px;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .top-menu__brand {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .top-menu__nav {
+        justify-content: center;
+    }
+
+    .top-menu__link {
+        flex: 1 1 140px;
     }
 }
