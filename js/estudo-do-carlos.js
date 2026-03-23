@@ -1,16 +1,20 @@
-const timeButtons = document.querySelectorAll(".time-option");
+const applyTimeButton = document.getElementById("apply-time-button");
+const customMinutesInput = document.getElementById("custom-minutes");
+const addTimeButtons = document.querySelectorAll("[data-add-minutes]");
 const startButton = document.getElementById("start-button");
 const pauseButton = document.getElementById("pause-button");
 const resetButton = document.getElementById("reset-button");
+const chromaToggle = document.getElementById("chroma-toggle");
 const minutesDisplay = document.getElementById("minutes");
 const secondsDisplay = document.getElementById("seconds");
 const selectedTimeLabel = document.getElementById("selected-time");
 const statusText = document.getElementById("status-text");
 const timerScreen = document.getElementById("timer-screen");
+const displayPanel = document.querySelector(".display-panel");
 const alarmAudio = document.getElementById("alarm-audio");
 
-let selectedMinutes = 15;
-let remainingSeconds = selectedMinutes * 60;
+let configuredMinutes = 15;
+let remainingSeconds = configuredMinutes * 60;
 let timerInterval = null;
 let audioUnlocked = false;
 
@@ -23,7 +27,7 @@ function formatClock(totalSeconds) {
 }
 
 function updateSelectedLabel() {
-    selectedTimeLabel.textContent = `${selectedMinutes} min`;
+    selectedTimeLabel.textContent = `${Math.floor(remainingSeconds / 60)} min ${String(remainingSeconds % 60).padStart(2, "0")} s`;
 }
 
 function stopTimer() {
@@ -84,17 +88,31 @@ async function playAlarm() {
     }
 }
 
-function setTime(minutes) {
-    selectedMinutes = minutes;
-    remainingSeconds = minutes * 60;
+function refreshTimerText() {
     updateSelectedLabel();
     formatClock(remainingSeconds);
     timerScreen.classList.remove("finished");
-    statusText.textContent = `Tempo ajustado para ${minutes} minutos.`;
+}
 
-    timeButtons.forEach((button) => {
-        button.classList.toggle("active", Number(button.dataset.minutes) === minutes);
-    });
+function setTime(minutes) {
+    configuredMinutes = minutes;
+    remainingSeconds = minutes * 60;
+    customMinutesInput.value = String(minutes);
+    alarmAudio.pause();
+    alarmAudio.currentTime = 0;
+    refreshTimerText();
+    statusText.textContent = `Tempo definido para ${minutes} minutos.`;
+}
+
+function addMinutes(minutesToAdd) {
+    const extraSeconds = minutesToAdd * 60;
+    configuredMinutes += minutesToAdd;
+    remainingSeconds += extraSeconds;
+    customMinutesInput.value = String(configuredMinutes);
+    alarmAudio.pause();
+    alarmAudio.currentTime = 0;
+    refreshTimerText();
+    statusText.textContent = `Foram adicionados ${minutesToAdd} minutos ao contador.`;
 }
 
 function finishTimer() {
@@ -120,10 +138,32 @@ function tick() {
     }
 }
 
-timeButtons.forEach((button) => {
+function applyCustomTime() {
+    const parsedMinutes = Number(customMinutesInput.value);
+
+    if (!Number.isFinite(parsedMinutes) || parsedMinutes < 1) {
+        customMinutesInput.value = String(configuredMinutes);
+        statusText.textContent = "Digite um valor valido maior que zero.";
+        return;
+    }
+
+    stopTimer();
+    setTime(Math.floor(parsedMinutes));
+}
+
+applyTimeButton.addEventListener("click", () => {
+    applyCustomTime();
+});
+
+customMinutesInput.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+        applyCustomTime();
+    }
+});
+
+addTimeButtons.forEach((button) => {
     button.addEventListener("click", () => {
-        stopTimer();
-        setTime(Number(button.dataset.minutes));
+        addMinutes(Number(button.dataset.addMinutes));
     });
 });
 
@@ -135,12 +175,13 @@ startButton.addEventListener("click", async () => {
     }
 
     if (remainingSeconds <= 0) {
-        remainingSeconds = selectedMinutes * 60;
+        remainingSeconds = configuredMinutes * 60;
         formatClock(remainingSeconds);
     }
 
     timerScreen.classList.remove("finished");
-    statusText.textContent = `Contagem iniciada em ${selectedMinutes} minutos.`;
+    updateSelectedLabel();
+    statusText.textContent = `Contagem iniciada com ${customMinutesInput.value} minutos configurados.`;
     timerInterval = setInterval(tick, 1000);
 });
 
@@ -151,10 +192,14 @@ pauseButton.addEventListener("click", () => {
 
 resetButton.addEventListener("click", () => {
     stopTimer();
-    setTime(selectedMinutes);
+    setTime(configuredMinutes);
     alarmAudio.pause();
     alarmAudio.currentTime = 0;
-    statusText.textContent = `Timer reiniciado para ${selectedMinutes} minutos.`;
+    statusText.textContent = `Timer reiniciado para ${configuredMinutes} minutos.`;
 });
 
-setTime(selectedMinutes);
+chromaToggle.addEventListener("change", () => {
+    displayPanel.classList.toggle("chroma-active", chromaToggle.checked);
+});
+
+setTime(configuredMinutes);

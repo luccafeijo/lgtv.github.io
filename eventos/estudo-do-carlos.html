@@ -15,19 +15,27 @@
                 <p class="eyebrow">Tela para live</p>
                 <h1>Estudo do Carlos</h1>
                 <p class="description">
-                    Escolha o tempo em blocos de 15 minutos, inicie a contagem e deixe o alerta avisar quando o estudo terminar.
+                    Digite o tempo, ajuste ao vivo quando precisar e ligue o modo chroma para destacar a area do contador na stream.
                 </p>
 
-                <div class="time-picker" id="time-picker" aria-label="Escolha o tempo do contador">
-                    <button class="time-option active" type="button" data-minutes="15">15 min</button>
-                    <button class="time-option" type="button" data-minutes="30">30 min</button>
-                    <button class="time-option" type="button" data-minutes="45">45 min</button>
-                    <button class="time-option" type="button" data-minutes="60">60 min</button>
-                    <button class="time-option" type="button" data-minutes="75">75 min</button>
-                    <button class="time-option" type="button" data-minutes="90">90 min</button>
-                    <button class="time-option" type="button" data-minutes="105">105 min</button>
-                    <button class="time-option" type="button" data-minutes="120">120 min</button>
+                <div class="custom-time-panel">
+                    <label class="field-label" for="custom-minutes">Tempo inicial em minutos</label>
+                    <div class="time-input-row">
+                        <input id="custom-minutes" class="time-input" type="number" min="1" step="1" value="15" inputmode="numeric">
+                        <button class="action-button accent-outline" id="apply-time-button" type="button">Definir tempo</button>
+                    </div>
                 </div>
+
+                <div class="time-boosts" aria-label="Adicionar tempo ao contador">
+                    <button class="time-option" type="button" data-add-minutes="5">+5 min</button>
+                    <button class="time-option" type="button" data-add-minutes="10">+10 min</button>
+                    <button class="time-option" type="button" data-add-minutes="15">+15 min</button>
+                </div>
+
+                <label class="chroma-toggle" for="chroma-toggle">
+                    <input id="chroma-toggle" type="checkbox">
+                    <span>Ativar fundo de chroma no painel do timer</span>
+                </label>
 
                 <div class="controls">
                     <button class="action-button primary" id="start-button" type="button">Iniciar</button>
@@ -46,12 +54,12 @@
                         <span class="divider">:</span>
                         <span id="seconds">00</span>
                     </div>
-                    <p class="selected-time">Tempo selecionado: <strong id="selected-time">15 min</strong></p>
+                    <p class="selected-time">Tempo configurado: <strong id="selected-time">15 min</strong></p>
                 </div>
             </section>
         </main>
 
-        <audio id="alarm-audio" preload="auto" src="../../sources/audio/yay.mp3"></audio>
+        <audio id="alarm-audio" preload="auto" src="../sources/audio/yay.mp3"></audio>
         <script src="../js/estudo-do-carlos.js"></script>
     </body>
 </html>

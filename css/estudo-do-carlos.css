@@ -88,9 +88,44 @@ h1 {
     line-height: 1.7;
 }
 
-.time-picker {
+.custom-time-panel {
+    margin-bottom: 18px;
+}
+
+.field-label {
+    display: block;
+    margin-bottom: 10px;
+    color: var(--text-soft);
+    font-size: 0.92rem;
+    font-weight: 500;
+}
+
+.time-input-row {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.time-input {
+    width: 100%;
+    padding: 16px 18px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-main);
+    font: inherit;
+    outline: none;
+}
+
+.time-input:focus {
+    border-color: rgba(115, 255, 162, 0.9);
+    box-shadow: 0 0 0 4px rgba(23, 212, 94, 0.14);
+}
+
+.time-boosts {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 12px;
     margin-bottom: 20px;
 }
@@ -143,6 +178,28 @@ h1 {
     border: none;
 }
 
+.action-button.accent-outline {
+    border-color: rgba(115, 255, 162, 0.55);
+    background: rgba(23, 212, 94, 0.12);
+}
+
+.chroma-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 22px;
+    color: var(--text-soft);
+    font-size: 0.96rem;
+    cursor: pointer;
+}
+
+.chroma-toggle input {
+    width: 20px;
+    height: 20px;
+    accent-color: var(--accent-strong);
+    cursor: pointer;
+}
+
 .status-text {
     margin: 22px 0 0;
     color: var(--text-soft);
@@ -156,11 +213,21 @@ h1 {
     padding: 28px;
 }
 
+.display-panel.chroma-active {
+    background: #1d7dff;
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.display-panel.chroma-active .timer-shell {
+    background: #1f252d;
+    border-color: rgba(255, 255, 255, 0.12);
+}
+
 .timer-shell {
     width: min(100%, 900px);
     padding: 28px;
     border-radius: 32px;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+    background: #1f252d;
     border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
@@ -260,8 +327,9 @@ h1 {
         border-radius: 24px;
     }
 
-    .time-picker {
-        grid-template-columns: 1fr 1fr;
+    .time-input-row,
+    .time-boosts {
+        grid-template-columns: 1fr;
     }
 
     .controls {
